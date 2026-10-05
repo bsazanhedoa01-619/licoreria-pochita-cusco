@@ -1,0 +1,1022 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Licorería Pochita | Venta y Delivery de Licores y Botellas en Cusco 24/7</title>
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Google Fonts: Inter & Outfit -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@600;700;800;900&display=swap" rel="stylesheet">
+    
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        heading: ['Outfit', 'sans-serif'],
+                    },
+                    colors: {
+                        gold: {
+                            400: '#fbbf24',
+                            500: '#f59e0b',
+                            600: '#d97706',
+                        },
+                        night: {
+                            900: '#0a0a0f',
+                            800: '#12121a',
+                            700: '#1a1a26',
+                            600: '#252538',
+                        },
+                        neon: {
+                            lime: '#84cc16',
+                            cyan: '#06b6d4',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            background-color: #0a0a0f;
+            color: #f3f4f6;
+            font-family: 'Inter', sans-serif;
+            overflow-x: hidden;
+        }
+        .bg-glow {
+            background: radial-gradient(circle at 50% 20%, rgba(245, 158, 11, 0.15) 0%, rgba(10, 10, 15, 0) 70%);
+        }
+        .glass-card {
+            background: rgba(26, 26, 38, 0.7);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+        }
+        .glass-card-hover:hover {
+            border-color: rgba(245, 158, 11, 0.4);
+            transform: translateY(-4px);
+            transition: all 0.3s ease;
+        }
+        .gold-gradient-text {
+            background: linear-gradient(135deg, #fef08a 0%, #f59e0b 50%, #d97706 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .gold-btn {
+            background: linear-gradient(135deg, #f59e0b 0%, #d97706 100%);
+            transition: all 0.3s ease;
+        }
+        .gold-btn:hover {
+            box-shadow: 0 0 20px rgba(245, 158, 11, 0.5);
+            transform: scale(1.02);
+        }
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #0a0a0f;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #252538;
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #f59e0b;
+        }
+    </style>
+</head>
+<body class="bg-night-900 text-gray-100 antialiased selection:bg-gold-500 selection:text-night-900">
+
+    <!-- NAV BAR -->
+    <nav class="fixed top-0 left-0 w-full z-40 bg-night-900/80 backdrop-blur-md border-b border-white/10 px-4 lg:px-8 py-3 transition-all duration-300">
+        <div class="max-w-7xl mx-auto flex items-center justify-between">
+            <!-- Brand Logo -->
+            <a href="#" class="flex items-center gap-3 group">
+                <div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-gold-600 to-yellow-400 flex items-center justify-center text-night-900 font-heading font-extrabold text-xl shadow-lg shadow-gold-500/20 group-hover:scale-105 transition-transform">
+                    🍾
+                </div>
+                <div>
+                    <span class="font-heading font-black text-xl tracking-wide text-white flex items-center gap-1">
+                        POCHITA <span class="text-xs bg-gold-500/20 text-gold-400 border border-gold-500/30 px-2 py-0.5 rounded-full uppercase">Cusco</span>
+                    </span>
+                    <span class="text-[10px] text-gray-400 block tracking-widest uppercase">Delivery de Licores 24/7</span>
+                </div>
+            </a>
+
+            <!-- Nav Links Desktop -->
+            <div class="hidden md:flex items-center gap-8 text-sm font-medium text-gray-300">
+                <a href="#licores" class="hover:text-gold-400 transition-colors">Catálogo de Botellas</a>
+                <a href="#beneficios" class="hover:text-gold-400 transition-colors">Por qué Pochita</a>
+                <a href="#zonas" class="hover:text-gold-400 transition-colors">Zonas de Cusco</a>
+                <a href="#testimonios" class="hover:text-gold-400 transition-colors">Opiniones</a>
+                <a href="#faq" class="hover:text-gold-400 transition-colors">Preguntas</a>
+            </div>
+
+            <!-- Quick Action Buttons -->
+            <div class="flex items-center gap-3">
+                <button onclick="toggleCartModal()" class="relative p-2.5 rounded-xl bg-night-700 border border-white/10 hover:border-gold-500/50 text-gray-200 transition-all flex items-center gap-2">
+                    <i data-lucide="shopping-bag" class="w-5 h-5 text-gold-400"></i>
+                    <span class="hidden sm:inline text-xs font-bold">Ver Pedido</span>
+                    <span id="cartBadge" class="hidden absolute -top-1.5 -right-1.5 bg-gold-500 text-night-900 font-bold text-xs w-5 h-5 rounded-full flex items-center justify-center shadow-lg">0</span>
+                </button>
+       
+            </div>
+        </div>
+    </nav>
+
+    <!-- HERO SECTION -->
+    <section class="relative pt-32 pb-20 md:pt-40 md:pb-28 px-4 bg-glow overflow-hidden">
+        <!-- Floating Ambient Elements -->
+        <div class="absolute top-1/4 -left-20 w-72 h-72 bg-gold-500/10 rounded-full blur-3xl pointer-events-none"></div>
+        <div class="absolute top-1/3 -right-20 w-80 h-80 bg-neon-cyan/10 rounded-full blur-3xl pointer-events-none"></div>
+
+        <div class="max-w-7xl mx-auto text-center relative z-10">
+            <!-- Alert Badge -->
+            <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-night-800/90 border border-gold-500/30 text-gold-400 text-xs sm:text-sm font-semibold mb-8 animate-pulse shadow-xl">
+                <span class="w-2 h-2 rounded-full bg-neon-lime"></span>
+                <span>🛵 Delivery de Botellas y Licores en Cusco • Atención 24 Horas</span>
+            </div>
+
+            <!-- Main Headline -->
+            <h1 class="font-heading font-black text-4xl sm:text-6xl lg:text-7xl tracking-tight text-white max-w-5xl mx-auto leading-tight mb-6">
+                Tus <span class="gold-gradient-text">marcas de licores favoritas</span> en tu puerta en <span class="text-neon-lime underline decoration-gold-500/50 decoration-wavy">30 min o menos</span>
+            </h1>
+
+            <!-- Subtitle -->
+            <p class="text-gray-300 text-base sm:text-lg lg:text-xl max-w-3xl mx-auto font-normal leading-relaxed mb-10">
+                Whisky, Ron, Vodka, Tequila, Pisco y Ginebra 100% originales. Te los llevamos helados o a temperatura ideal a tu casa, hotel o departamento en Cusco con hielos y complementos. <strong class="text-white">¡Pide tu botella ahora!</strong>
+            </p>
+
+            <!-- Hero CTA Buttons -->
+            <div class="flex flex-col sm:flex-row items-center justify-center gap-4 max-w-md mx-auto mb-16">
+                <button onclick="toggleCartModal()" class="w-full sm:w-auto gold-btn text-night-900 font-extrabold text-base px-8 py-4 rounded-xl flex items-center justify-center gap-3 shadow-xl">
+                    <i data-lucide="zap" class="w-5 h-5 fill-night-900"></i>
+                    <span>Pedir Licores Exprés</span>
+                </button>
+                <a href="#licores" class="w-full sm:w-auto glass-card hover:bg-white/10 text-white font-bold text-base px-8 py-4 rounded-xl flex items-center justify-center gap-2 transition-all border border-white/10">
+                    <i data-lucide="grid" class="w-5 h-5 text-gold-400"></i>
+                    <span>Ver Catalogo de Botellas</span>
+                </a>
+            </div>
+
+            <!-- Trust Micro-Badges -->
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-4 max-w-4xl mx-auto pt-6 border-t border-white/10 text-left">
+                <div class="flex items-center gap-3 p-3 rounded-lg bg-night-800/40 border border-white/5">
+                    <div class="p-2 bg-gold-500/10 rounded-lg text-gold-400"><i data-lucide="shield-check" class="w-5 h-5"></i></div>
+                    <div>
+                        <p class="text-xs text-gray-400">Garantía</p>
+                        <p class="text-sm font-bold text-white">100% Originales</p>
+                    </div>
+                </div>
+                <div class="flex items-center gap-3 p-3 rounded-lg bg-night-800/40 border border-white/5">
+                    <div class="p-2 bg-gold-500/10 rounded-lg text-gold-400"><i data-lucide="snowflake" class="w-5 h-5"></i></div>
+                    <div>
+                        <p class="text-xs text-gray-400">Complementos</p>
+                        <p class="text-sm font-bold text-white">Hielo y Gaseosas</p>
+                    </div>
+                </div>
+                <div class="flex items-center gap-3 p-3 rounded-lg bg-night-800/40 border border-white/5">
+                    <div class="p-2 bg-gold-500/10 rounded-lg text-gold-400"><i data-lucide="wallet" class="w-5 h-5"></i></div>
+                    <div>
+                        <p class="text-xs text-gray-400">Pagos</p>
+                        <p class="text-sm font-bold text-white">Yape, Plin, Tarjeta</p>
+                    </div>
+                </div>
+                <div class="flex items-center gap-3 p-3 rounded-lg bg-night-800/40 border border-white/5">
+                    <div class="p-2 bg-gold-500/10 rounded-lg text-gold-400"><i data-lucide="clock" class="w-5 h-5"></i></div>
+                    <div>
+                        <p class="text-xs text-gray-400">Promedio</p>
+                        <p class="text-sm font-bold text-white">25-30 Minutos</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- LICORES SECTION -->
+    <section id="licores" class="py-20 px-4 bg-night-800/50 relative">
+        <div class="max-w-7xl mx-auto">
+            <div class="text-center mb-14">
+                <span class="text-xs font-bold uppercase tracking-widest text-gold-400 bg-gold-500/10 px-3 py-1 rounded-full border border-gold-500/20">Catálogo de Botellas</span>
+                <h2 class="font-heading font-black text-3xl sm:text-5xl text-white mt-3">Licores Originales en Cusco</h2>
+                <p class="text-gray-400 text-sm sm:text-base max-w-xl mx-auto mt-2">Encuentra tus botellas favoritas de Ron, Whisky, Vodka, Tequila, Pisco y Ginebra.</p>
+            </div>
+
+            <!-- Category Filter Tabs -->
+            <div class="flex justify-center gap-2 mb-10 overflow-x-auto pb-2 scrollbar-none" id="categoryFilter">
+                <button onclick="filterCategory('todos')" class="cat-btn active px-5 py-2.5 rounded-full text-xs sm:text-sm font-bold bg-gold-500 text-night-900 transition-all">🔥 Todos los Licores</button>
+                <button onclick="filterCategory('whisky')" class="cat-btn px-5 py-2.5 rounded-full text-xs sm:text-sm font-bold bg-night-700 text-gray-300 hover:bg-night-600 transition-all">🥃 Whisky</button>
+                <button onclick="filterCategory('ron')" class="cat-btn px-5 py-2.5 rounded-full text-xs sm:text-sm font-bold bg-night-700 text-gray-300 hover:bg-night-600 transition-all">🍹 Ron</button>
+                <button onclick="filterCategory('vodka')" class="cat-btn px-5 py-2.5 rounded-full text-xs sm:text-sm font-bold bg-night-700 text-gray-300 hover:bg-night-600 transition-all">🍸 Vodka & Tequila</button>
+                <button onclick="filterCategory('pisco')" class="cat-btn px-5 py-2.5 rounded-full text-xs sm:text-sm font-bold bg-night-700 text-gray-300 hover:bg-night-600 transition-all">🇵🇪 Pisco & Gin</button>
+            </div>
+
+            <!-- Products Grid -->
+            <div id="productsGrid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                <!-- Dynamically Inserted Products -->
+            </div>
+        </div>
+    </section>
+
+    <!-- CUSCO DELIVERY ZONES SECTION -->
+    <section id="zonas" class="py-20 px-4 bg-night-900 relative">
+        <div class="max-w-5xl mx-auto">
+            <div class="glass-card rounded-3xl p-6 sm:p-10 border border-gold-500/20 relative overflow-hidden">
+                <div class="absolute -right-10 -bottom-10 w-60 h-60 bg-gold-500/10 rounded-full blur-2xl"></div>
+
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
+                    <div>
+                        <span class="text-xs font-bold uppercase tracking-widest text-gold-400 bg-gold-500/10 px-3 py-1 rounded-full border border-gold-500/20">Calculadora de Cobertura</span>
+                        <h2 class="font-heading font-black text-2xl sm:text-4xl text-white mt-3">¿Cuánto tardan tus botellas en llegar?</h2>
+                        <p class="text-gray-300 text-sm sm:text-base mt-2 mb-6">Selecciona tu distrito en Cusco para calcular el tiempo estimado de entrega y costo de envío.</p>
+
+                        <!-- Interactive Selector -->
+                        <div class="space-y-4">
+                            <div>
+                                <label class="block text-xs font-semibold text-gray-300 uppercase tracking-wider mb-2">Tu ubicación en Cusco:</label>
+                                <select id="zoneSelect" onchange="updateZoneInfo()" class="w-full bg-night-800 border border-white/20 text-white rounded-xl px-4 py-3 focus:outline-none focus:border-gold-500 font-medium text-sm">
+                                    <option value="centro">Centro Histórico / Plaza de Armas</option>
+                                    <option value="wanchaq">Wanchaq (Av. El Sol, Magisterio, Marcavalle)</option>
+                                    <option value="san_sebastian">San Sebastián / Santa Rosa</option>
+                                    <option value="san_jeronimo">San Jerónimo / Larapa</option>
+                                    <option value="santiago">Santiago / Ttio</option>
+                                    <option value="sacsayhuaman">Zona Alta / San Blas alto</option>
+                                </select>
+                            </div>
+
+                            <div class="p-4 rounded-xl bg-night-900/80 border border-white/10 grid grid-cols-2 gap-4 text-center">
+                                <div>
+                                    <span class="text-xs text-gray-400 block">Tiempo Estimado</span>
+                                    <span id="zoneTime" class="font-heading font-black text-xl text-gold-400">15 - 25 min</span>
+                                </div>
+                                <div>
+                                    <span class="text-xs text-gray-400 block">Costo de Envío</span>
+                                    <span id="zoneFee" class="font-heading font-black text-xl text-neon-lime">S/ 5.00</span>
+                                </div>
+                            </div>
+                            
+                            <p id="zoneOffer" class="text-xs text-gray-400 text-center italic">✨ Delivery GRATIS en pedidos de licores mayores a S/ 120.00</p>
+                        </div>
+                    </div>
+
+                    <!-- Map graphic / Cusco Vibe Illustration -->
+                    <div class="bg-night-800 rounded-2xl p-6 border border-white/10 text-center relative flex flex-col justify-between min-h-[280px]">
+                        <div class="flex items-center justify-between border-b border-white/10 pb-3">
+                            <span class="text-xs font-bold text-gray-300 flex items-center gap-2">
+                                <i data-lucide="map-pin" class="w-4 h-4 text-gold-400"></i> Cobertura Express Cusco
+                            </span>
+                            <span class="text-[10px] bg-neon-lime/20 text-neon-lime px-2 py-0.5 rounded-full font-bold">GPS Activo</span>
+                        </div>
+
+                        <div class="my-6">
+                            <div class="w-16 h-16 bg-gold-500/20 text-gold-400 rounded-full flex items-center justify-center mx-auto mb-3 animate-bounce">
+                                <i data-lucide="navigation" class="w-8 h-8"></i>
+                            </div>
+                            <h3 id="zoneTitle" class="font-heading font-bold text-lg text-white">Centro Histórico & San Blas</h3>
+                            <p id="zoneDesc" class="text-xs text-gray-400 mt-1">Llegamos directo a tu hotel, Airbnb, hostal o departamento en minutos.</p>
+                        </div>
+
+                        <button onclick="toggleCartModal()" class="w-full gold-btn py-3 rounded-xl text-night-900 font-bold text-xs uppercase tracking-wider">
+                            Pedir licores a esta ubicación
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 3 CONCRETE BENEFITS SECTION -->
+    <section id="beneficios" class="py-20 px-4 bg-night-800/30">
+        <div class="max-w-7xl mx-auto">
+            <div class="text-center mb-16">
+                <span class="text-xs font-bold uppercase tracking-widest text-gold-400 bg-gold-500/10 px-3 py-1 rounded-full border border-gold-500/20">Calidad Garantizada</span>
+                <h2 class="font-heading font-black text-3xl sm:text-5xl text-white mt-3">¿Por qué comprar tus botellas en Pochita?</h2>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Benefit 1 -->
+                <div class="glass-card p-8 rounded-3xl glass-card-hover border border-white/10 relative group">
+                    <div class="w-14 h-14 bg-gradient-to-br from-gold-500 to-gold-600 rounded-2xl flex items-center justify-center text-night-900 mb-6 shadow-lg shadow-gold-500/20 group-hover:scale-110 transition-transform">
+                        <i data-lucide="shield-check" class="w-7 h-7 text-night-900"></i>
+                    </div>
+                    <h3 class="font-heading font-bold text-xl text-white mb-3">Botellas 100% Originales</h3>
+                    <p class="text-gray-400 text-sm leading-relaxed">
+                        Todos nuestros licores proceden de distribuidores oficiales con estampilla de garantía. Cero imitación, máxima calidad para tus previas.
+                    </p>
+                </div>
+
+                <!-- Benefit 2 -->
+                <div class="glass-card p-8 rounded-3xl glass-card-hover border border-white/10 relative group">
+                    <div class="w-14 h-14 bg-gradient-to-br from-neon-cyan to-blue-600 rounded-2xl flex items-center justify-center text-night-900 mb-6 shadow-lg shadow-neon-cyan/20 group-hover:scale-110 transition-transform">
+                        <i data-lucide="snowflake" class="w-7 h-7 text-night-900"></i>
+                    </div>
+                    <h3 class="font-heading font-bold text-xl text-white mb-3">Con Hielo y Complementos</h3>
+                    <p class="text-gray-400 text-sm leading-relaxed">
+                        No solo te llevamos la botella: te enviamos hielo en bolsa, gaseosas, energizantes y complementos para que armas la previa al instante.
+                    </p>
+                </div>
+
+                <!-- Benefit 3 -->
+                <div class="glass-card p-8 rounded-3xl glass-card-hover border border-white/10 relative group">
+                    <div class="w-14 h-14 bg-gradient-to-br from-neon-lime to-green-600 rounded-2xl flex items-center justify-center text-night-900 mb-6 shadow-lg shadow-neon-lime/20 group-hover:scale-110 transition-transform">
+                        <i data-lucide="zap" class="w-7 h-7 text-night-900"></i>
+                    </div>
+                    <h3 class="font-heading font-bold text-xl text-white mb-3">Entrega Express 24/7</h3>
+                    <p class="text-gray-400 text-sm leading-relaxed">
+                        Atendemos durante todo el día y la noche. Nuestro delivery motorizado llega rápido a cualquier punto de la ciudad de Cusco.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- TESTIMONIALS SECTION -->
+    <section id="testimonios" class="py-20 px-4 bg-night-900">
+        <div class="max-w-7xl mx-auto">
+            <div class="text-center mb-16">
+                <span class="text-xs font-bold uppercase tracking-widest text-gold-400 bg-gold-500/10 px-3 py-1 rounded-full border border-gold-500/20">Clientes Felices</span>
+                <h2 class="font-heading font-black text-3xl sm:text-5xl text-white mt-3">Lo que dicen en Cusco de nuestros licores</h2>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <!-- Testimonial 1 -->
+                <div class="glass-card p-6 rounded-2xl border border-white/10">
+                    <div class="flex items-center gap-1 text-gold-400 mb-4">
+                        <i data-lucide="star" class="w-4 h-4 fill-gold-400"></i>
+                        <i data-lucide="star" class="w-4 h-4 fill-gold-400"></i>
+                        <i data-lucide="star" class="w-4 h-4 fill-gold-400"></i>
+                        <i data-lucide="star" class="w-4 h-4 fill-gold-400"></i>
+                        <i data-lucide="star" class="w-4 h-4 fill-gold-400"></i>
+                    </div>
+                    <p class="text-gray-300 text-xs sm:text-sm italic mb-6">
+                        "Pedimos una botella de Black Label con hielo a las 2 AM en el Centro Histórico y en 20 minutos ya estaba en la puerta. Súper confiables."
+                    </p>
+                    <div class="flex items-center gap-3">
+                        <div class="w-10 h-10 rounded-full bg-gold-500/20 border border-gold-500/40 flex items-center justify-center font-bold text-gold-400 text-sm">
+                            RG
+                        </div>
+                        <div>
+                            <h4 class="text-sm font-bold text-white">Rodrigo Gutierrez</h4>
+                            <p class="text-[11px] text-gray-400">Centro Histórico, Cusco</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Testimonial 2 -->
+                <div class="glass-card p-6 rounded-2xl border border-white/10">
+                    <div class="flex items-center gap-1 text-gold-400 mb-4">
+                        <i data-lucide="star" class="w-4 h-4 fill-gold-400"></i>
+                        <i data-lucide="star" class="w-4 h-4 fill-gold-400"></i>
+                        <i data-lucide="star" class="w-4 h-4 fill-gold-400"></i>
+                        <i data-lucide="star" class="w-4 h-4 fill-gold-400"></i>
+                        <i data-lucide="star" class="w-4 h-4 fill-gold-400"></i>
+                    </div>
+                    <p class="text-gray-300 text-xs sm:text-sm italic mb-6">
+                        "Pedí el paquete de Ron Flor de Caña con Coca Cola. Todo 100% original con sellos intactos. Un servicio excelente en Cusco."
+                    </p>
+                    <div class="flex items-center gap-3">
+                        <div class="w-10 h-10 rounded-full bg-gold-500/20 border border-gold-500/40 flex items-center justify-center font-bold text-gold-400 text-sm">
+                            VM
+                        </div>
+                        <div>
+                            <h4 class="text-sm font-bold text-white">Valeria Morales</h4>
+                            <p class="text-[11px] text-gray-400">Wanchaq, Cusco</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Testimonial 3 -->
+                <div class="glass-card p-6 rounded-2xl border border-white/10">
+                    <div class="flex items-center gap-1 text-gold-400 mb-4">
+                        <i data-lucide="star" class="w-4 h-4 fill-gold-400"></i>
+                        <i data-lucide="star" class="w-4 h-4 fill-gold-400"></i>
+                        <i data-lucide="star" class="w-4 h-4 fill-gold-400"></i>
+                        <i data-lucide="star" class="w-4 h-4 fill-gold-400"></i>
+                        <i data-lucide="star" class="w-4 h-4 fill-gold-400"></i>
+                    </div>
+                    <p class="text-gray-300 text-xs sm:text-sm italic mb-6">
+                        "Compré una botella de Tequila José Cuervo y trajeron el hielo y los limones incluidos. La mejor licorería delivery que he probado en Cusco."
+                    </p>
+                    <div class="flex items-center gap-3">
+                        <div class="w-10 h-10 rounded-full bg-gold-500/20 border border-gold-500/40 flex items-center justify-center font-bold text-gold-400 text-sm">
+                            DC
+                        </div>
+                        <div>
+                            <h4 class="text-sm font-bold text-white">Diego Cárdenas</h4>
+                            <p class="text-[11px] text-gray-400">Magisterio, Cusco</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ SECTION -->
+    <section id="faq" class="py-20 px-4 bg-night-800/40">
+        <div class="max-w-4xl mx-auto">
+            <div class="text-center mb-14">
+                <span class="text-xs font-bold uppercase tracking-widest text-gold-400 bg-gold-500/10 px-3 py-1 rounded-full border border-gold-500/20">Resuelve tus Dudas</span>
+                <h2 class="font-heading font-black text-3xl sm:text-4xl text-white mt-3">Preguntas Frecuentes</h2>
+            </div>
+
+            <div class="space-y-4">
+                <!-- FAQ Item 1 -->
+                <div class="glass-card rounded-2xl border border-white/10 overflow-hidden">
+                    <button onclick="toggleFaq('faq1')" class="w-full text-left p-5 flex items-center justify-between font-bold text-white hover:text-gold-400 transition-colors">
+                        <span>¿Las botellas son 100% originales?</span>
+                        <i id="icon-faq1" data-lucide="chevron-down" class="w-5 h-5 text-gold-400 transition-transform"></i>
+                    </button>
+                    <div id="faq1" class="hidden p-5 pt-0 text-xs sm:text-sm text-gray-300 border-t border-white/5">
+                        Sí, todas nuestras botellas son selladas, originales y de distribuidores autorizados en Perú.
+                    </div>
+                </div>
+
+                <!-- FAQ Item 2 -->
+                <div class="glass-card rounded-2xl border border-white/10 overflow-hidden">
+                    <button onclick="toggleFaq('faq2')" class="w-full text-left p-5 flex items-center justify-between font-bold text-white hover:text-gold-400 transition-colors">
+                        <span>¿Qué medios de pago aceptan?</span>
+                        <i id="icon-faq2" data-lucide="chevron-down" class="w-5 h-5 text-gold-400 transition-transform"></i>
+                    </button>
+                    <div id="faq2" class="hidden p-5 pt-0 text-xs sm:text-sm text-gray-300 border-t border-white/5">
+                        Aceptamos Yape, Plin, transferencia inmediata (BCP, Interbank), tarjetas de crédito/débito (+POS) y efectivo contra entrega.
+                    </div>
+                </div>
+
+                <!-- FAQ Item 3 -->
+                <div class="glass-card rounded-2xl border border-white/10 overflow-hidden">
+                    <button onclick="toggleFaq('faq3')" class="w-full text-left p-5 flex items-center justify-between font-bold text-white hover:text-gold-400 transition-colors">
+                        <span>¿Puedo pedir hielo y mezcladores adicionales?</span>
+                        <i id="icon-faq3" data-lucide="chevron-down" class="w-5 h-5 text-gold-400 transition-transform"></i>
+                    </button>
+                    <div id="faq3" class="hidden p-5 pt-0 text-xs sm:text-sm text-gray-300 border-t border-white/5">
+                        ¡Por supuesto! Vendemos bolsas de hielo en rocas, gaseosas (Coca Cola, Sprite, Evervess), agua tónica y energizantes para tus botellas.
+                    </div>
+                </div>
+
+                <!-- FAQ Item 4 -->
+                <div class="glass-card rounded-2xl border border-white/10 overflow-hidden">
+                    <button onclick="toggleFaq('faq4')" class="w-full text-left p-5 flex items-center justify-between font-bold text-white hover:text-gold-400 transition-colors">
+                        <span>¿Hay monto mínimo para delivery en Cusco?</span>
+                        <i id="icon-faq4" data-lucide="chevron-down" class="w-5 h-5 text-gold-400 transition-transform"></i>
+                    </button>
+                    <div id="faq4" class="hidden p-5 pt-0 text-xs sm:text-sm text-gray-300 border-t border-white/5">
+                        El pedido mínimo es de S/ 30.00. En compras mayores a S/ 120.00, el costo de delivery es completamente GRATIS.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SHOPPING CART & ORDER MODAL -->
+    
+<!-- Modal Carrito -->
+<div id="cartModal" class="fixed inset-0 z-50 bg-black/80 backdrop-blur-md hidden flex items-center justify-center p-4">
+    <div class="bg-night-800 border border-gold-500/30 rounded-3xl w-full max-w-xl max-h-[90vh] overflow-y-auto p-6 sm:p-8 relative shadow-2xl">
+        <!-- Botón Cerrar -->
+        <button onclick="toggleCartModal()" class="absolute top-5 right-5 text-gray-400 hover:text-white p-2">
+            <i data-lucide="x" class="w-6 h-6"></i>
+        </button>
+
+        <!-- Encabezado Modal -->
+        <div class="flex items-center gap-3 border-b border-white/10 pb-4 mb-6">
+            <div class="p-2.5 bg-gold-500/10 text-gold-400 rounded-xl">
+                <i data-lucide="shopping-bag" class="w-6 h-6"></i>
+            </div>
+            <div>
+                <h3 class="font-heading font-black text-xl text-white">Tu Pedido de Licores - Pochita</h3>
+                <p class="text-xs text-gray-400">Verifica tus botellas y completa tus datos para realizar el pedido</p>
+            </div>
+        </div>
+
+        <!-- Contenedor de Items -->
+        <div id="cartItems" class="space-y-3 mb-6"></div>
+
+        <!-- Formulario Datos de Entrega -->
+        <div class="space-y-4 border-t border-white/10 pt-4 mb-6">
+            <h4 class="font-bold text-sm text-gold-400 uppercase tracking-wider">Datos de Entrega en Cusco</h4>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                <div>
+                    <label class="block text-xs font-medium text-gray-300 mb-1">Tu Nombre:</label>
+                    <input type="text" id="custName" placeholder="Ej: Carlos Perez" class="w-full bg-night-900 border border-white/10 rounded-xl px-3 py-2 text-sm text-white focus:outline-none focus:border-gold-500">
+                </div>
+                <div>
+                    <label class="block text-xs font-medium text-gray-300 mb-1">Teléfono:</label>
+                    <input type="tel" id="custPhone" placeholder="Ej: 987654321" class="w-full bg-night-900 border border-white/10 rounded-xl px-3 py-2 text-sm text-white focus:outline-none focus:border-gold-500">
+                </div>
+            </div>
+
+            <div>
+                <label class="block text-xs font-medium text-gray-300 mb-1">Correo Electrónico:</label>
+                <input type="email" id="custEmail" placeholder="Ej: tu@correo.com" class="w-full bg-night-900 border border-white/10 rounded-xl px-3 py-2 text-sm text-white focus:outline-none focus:border-gold-500">
+            </div>
+
+            <div>
+                <label class="block text-xs font-medium text-gray-300 mb-1">Zona / Distrito en Cusco:</label>
+                <select id="cartZone" onchange="calculateCartTotal()" class="w-full bg-night-900 border border-white/10 rounded-xl px-3 py-2 text-sm text-white focus:outline-none focus:border-gold-500">
+                    <option value="centro" data-fee="5">Centro Histórico / San Blas (S/ 5.00)</option>
+                    <option value="wanchaq" data-fee="5">Wanchaq / Magisterio (S/ 5.00)</option>
+                    <option value="san_sebastian" data-fee="7">San Sebastián (S/ 7.00)</option>
+                    <option value="san_jeronimo" data-fee="8">San Jerónimo / Larapa (S/ 8.00)</option>
+                    <option value="santiago" data-fee="6">Santiago / Ttio (S/ 6.00)</option>
+                </select>
+            </div>
+
+            <div>
+                <label class="block text-xs font-medium text-gray-300 mb-1">Dirección Exacta o Referencia:</label>
+                <input type="text" id="custAddress" placeholder="Ej: Calle Plateros 320, Dpto 302" class="w-full bg-night-900 border border-white/10 rounded-xl px-3 py-2 text-sm text-white focus:outline-none focus:border-gold-500">
+            </div>
+
+            <div>
+                <label class="block text-xs font-medium text-gray-300 mb-1">Método de Pago Preferido:</label>
+                <select id="custPayment" class="w-full bg-night-900 border border-white/10 rounded-xl px-3 py-2 text-sm text-white focus:outline-none focus:border-gold-500">
+                    <option value="Yape">Yape / Plin</option>
+                    <option value="Efectivo">Efectivo contra entrega</option>
+                    <option value="Tarjeta">Tarjeta de Crédito / Débito (+POS)</option>
+                </select>
+            </div>
+        </div>
+
+        <!-- Desglose de Precios -->
+        <div class="p-4 bg-night-900 rounded-2xl border border-white/10 space-y-2 mb-6 text-sm">
+            <div class="flex justify-between text-gray-400">
+                <span>Subtotal Botellas:</span>
+                <span id="cartSubtotal" class="font-bold text-white">S/ 0.00</span>
+            </div>
+            <div class="flex justify-between text-gray-400">
+                <span>Costo Delivery Cusco:</span>
+                <span id="cartDeliveryFee" class="font-bold text-neon-lime">S/ 5.00</span>
+            </div>
+            <div class="flex justify-between text-base font-black text-white pt-2 border-t border-white/10">
+                <span>Total a Pagar:</span>
+                <span id="cartTotal" class="text-gold-400 font-heading text-xl">S/ 5.00</span>
+            </div>
+        </div>
+
+        <!-- Botón Confirmar (Dentro del contenedor) -->
+        <button onclick="sendOrderWhatsApp()" class="w-full gold-btn py-4 rounded-xl text-night-900 font-extrabold text-base flex items-center justify-center gap-3 shadow-lg">
+            <i data-lucide="send" class="w-5 h-5 fill-night-900"></i>
+            <span>Confirmar y Enviar Pedido</span>
+        </button>
+    </div>
+</div>
+        <!-- Cart Items Container -->
+        <div id="cartItems" class="space-y-3 mb-6"></div>
+
+        <!-- Delivery Location Selection in Order -->
+        <div class="space-y-4 border-t border-white/10 pt-4 mb-6">
+            <h4 class="font-bold text-sm text-gold-400 uppercase tracking-wider">Datos de Entrega en Cusco</h4>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                <div>
+                    <label class="block text-xs font-medium text-gray-300 mb-1">Tu Nombre:</label>
+                    <input type="text" id="custName" placeholder="Ej: Carlos Perez" class="w-full bg-night-900 border border-white/10 rounded-xl px-3 py-2 text-sm text-white focus:outline-none focus:border-gold-500">
+                </div>
+                <div>
+                    <label class="block text-xs font-medium text-gray-300 mb-1">Teléfono:</label>
+                    <input type="tel" id="custPhone" placeholder="Ej: 987654321" class="w-full bg-night-900 border border-white/10 rounded-xl px-3 py-2 text-sm text-white focus:outline-none focus:border-gold-500">
+                </div>
+            </div>
+
+            <div>
+                <label class="block text-xs font-medium text-gray-300 mb-1">Correo Electrónico:</label>
+                <input type="email" id="custEmail" placeholder="Ej: tu@correo.com" class="w-full bg-night-900 border border-white/10 rounded-xl px-3 py-2 text-sm text-white focus:outline-none focus:border-gold-500">
+            </div>
+
+            <div>
+                <label class="block text-xs font-medium text-gray-300 mb-1">Zona / Distrito en Cusco:</label>
+                <select id="cartZone" onchange="calculateCartTotal()" class="w-full bg-night-900 border border-white/10 rounded-xl px-3 py-2 text-sm text-white focus:outline-none focus:border-gold-500">
+                    <option value="centro" data-fee="5">Centro Histórico / San Blas (S/ 5.00)</option>
+                    <option value="wanchaq" data-fee="5">Wanchaq / Magisterio (S/ 5.00)</option>
+                    <option value="san_sebastian" data-fee="7">San Sebastián (S/ 7.00)</option>
+                    <option value="san_jeronimo" data-fee="8">San Jerónimo / Larapa (S/ 8.00)</option>
+                    <option value="santiago" data-fee="6">Santiago / Ttio (S/ 6.00)</option>
+                </select>
+            </div>
+
+            <div>
+                <label class="block text-xs font-medium text-gray-300 mb-1">Dirección Exacta o Referencia:</label>
+                <input type="text" id="custAddress" placeholder="Ej: Calle Plateros 320, Dpto 302" class="w-full bg-night-900 border border-white/10 rounded-xl px-3 py-2 text-sm text-white focus:outline-none focus:border-gold-500">
+            </div>
+
+            <div>
+                <label class="block text-xs font-medium text-gray-300 mb-1">Método de Pago Preferido:</label>
+                <select id="custPayment" class="w-full bg-night-900 border border-white/10 rounded-xl px-3 py-2 text-sm text-white focus:outline-none focus:border-gold-500">
+                    <option value="Yape">Yape / Plin</option>
+                    <option value="Efectivo">Efectivo contra entrega</option>
+                    <option value="Tarjeta">Tarjeta de Crédito / Débito (+POS)</option>
+                </select>
+            </div>
+        </div>
+
+        <!-- Price Breakdown -->
+        <div class="p-4 bg-night-900 rounded-2xl border border-white/10 space-y-2 mb-6 text-sm">
+            <div class="flex justify-between text-gray-400">
+                <span>Subtotal Botellas:</span>
+                <span id="cartSubtotal" class="font-bold text-white">S/ 0.00</span>
+            </div>
+            <div class="flex justify-between text-gray-400">
+                <span>Costo Delivery Cusco:</span>
+                <span id="cartDeliveryFee" class="font-bold text-neon-lime">S/ 5.00</span>
+            </div>
+            <div class="flex justify-between text-base font-black text-white pt-2 border-t border-white/10">
+                <span>Total a Pagar:</span>
+                <span id="cartTotal" class="text-gold-400 font-heading text-xl">S/ 5.00</span>
+            </div>
+        </div>
+
+        <!-- BOTÓN CONFIRMAR PEDIDO -->
+        <button onclick="sendOrderWhatsApp()" class="w-full gold-btn py-4 rounded-xl text-night-900 font-extrabold text-base flex items-center justify-center gap-3 shadow-lg">
+            <i data-lucide="send" class="w-5 h-5 fill-night-900"></i>
+            <span>Confirmar y Enviar Pedido</span>
+        </button>
+    </div>
+     <!-- BOTÓN CONFIRMAR PEDIDO -->
+        <button onclick="sendOrderWhatsApp()" class="w-full gold-btn py-4 rounded-xl text-night-900 font-extrabold text-base flex items-center justify-center gap-3 shadow-lg">
+            <i data-lucide="send" class="w-5 h-5 fill-night-900"></i>
+            <span>Confirmar y Enviar Pedido</span>
+        </button>
+    </div>
+</div>
+    <!-- FOOTER -->
+    <footer class="bg-night-900 border-t border-white/10 py-12 px-4 text-gray-400 text-xs sm:text-sm">
+        <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
+            <div>
+                <div class="flex items-center gap-2 mb-3">
+                    <span class="text-2xl">🍾</span>
+                    <span class="font-heading font-black text-lg text-white">LICORERÍA POCHITA CUSCO</span>
+                </div>
+                <p class="text-gray-400 leading-relaxed text-xs">
+                    Tu delivery de botellas y licores de marca en Cusco. Whisky, Ron, Vodka, Tequila, Pisco y Ginebra originales a la puerta de tu casa u hotel.
+                </p>
+            </div>
+
+            <div>
+                <h4 class="font-bold text-white uppercase tracking-wider mb-3">Atención & Contacto</h4>
+                <ul class="space-y-2 text-xs">
+                    <li class="flex items-center gap-2"><i data-lucide="phone" class="w-4 h-4 text-gold-400"></i> +51 987 654 321</li>
+                    <li class="flex items-center gap-2"><i data-lucide="map-pin" class="w-4 h-4 text-gold-400"></i> Centro Histórico, Cusco, Perú</li>
+                    <li class="flex items-center gap-2"><i data-lucide="clock" class="w-4 h-4 text-gold-400"></i> Lunes a Domingo - Atención 24 Horas</li>
+                </ul>
+            </div>
+
+            <div>
+                <h4 class="font-bold text-white uppercase tracking-wider mb-3">Aviso Legal</h4>
+                <p class="text-[11px] text-gray-500 leading-normal">
+                    Tomar bebidas alcohólicas en exceso es dañino. Prohibida la venta de bebidas alcohólicas a menores de 18 años. Licorería Pochita promueve el consumo responsable.
+                </p>
+            </div>
+        </div>
+
+        <div class="max-w-7xl mx-auto border-t border-white/5 pt-6 text-center text-xs text-gray-500">
+            © 2026 Licorería Pochita Cusco. Todos los derechos reservados.
+        </div>
+    </footer>
+
+    <!-- JAVASCRIPT APP LOGIC -->
+    <script>
+        // Catalog Products Data (Solo Botellas de Licores)
+        const PRODUCTS = [
+            {
+                id: 'l1',
+                category: 'whisky',
+                name: 'Whisky Johnnie Walker Black Label 750ml',
+                desc: 'Whisky escocés 12 años añejado. Incluye bolsa de hielo en rocas.',
+                price: 115.00,
+                tag: '🔥 El Más Pedido',
+                badgeBg: 'bg-gold-500 text-night-900',
+                icon: '🥃'
+            },
+            {
+                id: 'l2',
+                category: 'whisky',
+                name: 'Whisky Johnnie Walker Red Label 750ml',
+                desc: 'Classic Blended Scotch Whisky. Incluye bolsa de hielo.',
+                price: 68.00,
+                tag: '⭐ Recomendado',
+                badgeBg: 'bg-amber-600 text-white',
+                icon: '🥃'
+            },
+            {
+                id: 'l3',
+                category: 'ron',
+                name: 'Ron Flor de Caña 7 Años 750ml',
+                desc: 'Ron Gran Reserva añejado naturalmente. Incluye Coca Cola 1.5L + Hielo.',
+                price: 75.00,
+                tag: '🍹 Promoción',
+                badgeBg: 'bg-neon-lime text-night-900',
+                icon: '🍾'
+            },
+            {
+                id: 'l4',
+                category: 'ron',
+                name: 'Ron Cartavio Solera 12 Años 750ml',
+                desc: 'Ron añejo peruano de sabor suave. Incluye Coca Cola 1.5L + Hielo.',
+                price: 65.00,
+                tag: '🇵🇪 Favorito',
+                badgeBg: 'bg-red-600 text-white',
+                icon: '🍾'
+            },
+            {
+                id: 'l5',
+                category: 'vodka',
+                name: 'Vodka Smirnoff Red 750ml',
+                desc: 'Vodka triple destilado. Incluye 2 Evervess o Sprite 1.5L + Hielo.',
+                price: 52.00,
+                tag: '🎉 Previas',
+                badgeBg: 'bg-neon-cyan text-night-900',
+                icon: '🍸'
+            },
+            {
+                id: 'l6',
+                category: 'vodka',
+                name: 'Tequila José Cuervo Reposado 750ml',
+                desc: 'Tequila mexicano auténtico. Incluye limones + sal fina + Hielo.',
+                price: 88.00,
+                tag: '🔥 Top Ventas',
+                badgeBg: 'bg-gold-500 text-night-900',
+                icon: '🌵'
+            },
+            {
+                id: 'l7',
+                category: 'pisco',
+                name: 'Pisco Santiago Queirolo Acholado 750ml',
+                desc: 'Pisco peruano de calidad. Incluye Evervess 1.5L + Limones + Hielo.',
+                price: 48.00,
+                tag: '🇵🇪 100% Peruano',
+                badgeBg: 'bg-purple-600 text-white',
+                icon: '🍾'
+            },
+            {
+                id: 'l8',
+                category: 'pisco',
+                name: 'Gin Tanqueray London Dry 750ml',
+                desc: 'Ginebra premium destilada. Incluye 2 Aguas Tónicas Schweppes + Hielo.',
+                price: 98.00,
+                tag: '👑 Premium',
+                badgeBg: 'bg-pink-600 text-white',
+                icon: '🍸'
+            }
+        ];
+
+        // State management
+        let cart = [
+            { ...PRODUCTS[0], quantity: 1 } // Default initial bottle
+        ];
+
+        // Render Catalog Products
+        function renderProducts(category = 'todos') {
+            const grid = document.getElementById('productsGrid');
+            grid.innerHTML = '';
+
+            const filtered = category === 'todos' 
+                ? PRODUCTS 
+                : PRODUCTS.filter(p => p.category === category);
+
+            filtered.forEach(product => {
+                const card = document.createElement('div');
+                card.className = 'glass-card p-5 rounded-2xl border border-white/10 flex flex-col justify-between glass-card-hover relative group';
+                card.innerHTML = `
+                    <div>
+                        <div class="flex justify-between items-start mb-4">
+                            <span class="text-3xl">${product.icon}</span>
+                            <span class="text-[10px] font-extrabold uppercase px-2.5 py-1 rounded-full ${product.badgeBg}">
+                                ${product.tag}
+                            </span>
+                        </div>
+                        <h3 class="font-heading font-bold text-lg text-white mb-1">${product.name}</h3>
+                        <p class="text-gray-400 text-xs leading-relaxed mb-4">${product.desc}</p>
+                    </div>
+
+                    <div class="pt-4 border-t border-white/10 flex items-center justify-between mt-2">
+                        <div>
+                            <span class="text-[10px] text-gray-400 block">Precio:</span>
+                            <span class="font-heading font-black text-xl text-gold-400">S/ ${product.price.toFixed(2)}</span>
+                        </div>
+                        <button onclick="addToCart('${product.id}')" class="gold-btn px-4 py-2 rounded-xl text-night-900 font-bold text-xs flex items-center gap-1">
+                            <i data-lucide="plus" class="w-4 h-4"></i> Añadir
+                        </button>
+                    </div>
+                `;
+                grid.appendChild(card);
+            });
+
+            lucide.createIcons();
+        }
+
+        // Filter Category Handler
+        function filterCategory(cat) {
+            document.querySelectorAll('.cat-btn').forEach(btn => {
+                btn.classList.remove('bg-gold-500', 'text-night-900');
+                btn.classList.add('bg-night-700', 'text-gray-300');
+            });
+            event.target.classList.remove('bg-night-700', 'text-gray-300');
+            event.target.classList.add('bg-gold-500', 'text-night-900');
+
+            renderProducts(cat);
+        }
+
+        // Cart Management
+        function addToCart(productId) {
+            const existing = cart.find(item => item.id === productId);
+            if (existing) {
+                existing.quantity += 1;
+            } else {
+                const prod = PRODUCTS.find(p => p.id === productId);
+                cart.push({ ...prod, quantity: 1 });
+            }
+            updateCartBadge();
+            toggleCartModal(true);
+        }
+
+        function updateCartQuantity(productId, delta) {
+            const item = cart.find(i => i.id === productId);
+            if (!item) return;
+
+            item.quantity += delta;
+            if (item.quantity <= 0) {
+                cart = cart.filter(i => i.id !== productId);
+            }
+            renderCartModal();
+            updateCartBadge();
+        }
+
+        function updateCartBadge() {
+            const badge = document.getElementById('cartBadge');
+            const totalItems = cart.reduce((acc, i) => acc + i.quantity, 0);
+            
+            if (totalItems > 0) {
+                badge.innerText = totalItems;
+                badge.classList.remove('hidden');
+            } else {
+                badge.classList.add('hidden');
+            }
+        }
+
+        function toggleCartModal(forceOpen = false) {
+            const modal = document.getElementById('cartModal');
+            if (forceOpen || modal.classList.contains('hidden')) {
+                modal.classList.remove('hidden');
+                renderCartModal();
+            } else {
+                modal.classList.add('hidden');
+            }
+        }
+
+        function renderCartModal() {
+            const container = document.getElementById('cartItems');
+            container.innerHTML = '';
+
+            if (cart.length === 0) {
+                container.innerHTML = `<p class="text-center text-gray-400 py-6 text-xs">Tu carrito está vacío. ¡Añade tus botellas de licor!</p>`;
+            } else {
+                cart.forEach(item => {
+                    const row = document.createElement('div');
+                    row.className = 'flex items-center justify-between p-3 rounded-xl bg-night-900 border border-white/5 text-xs';
+                    row.innerHTML = `
+                        <div class="flex items-center gap-3">
+                            <span class="text-xl">${item.icon}</span>
+                            <div>
+                                <p class="font-bold text-white">${item.name}</p>
+                                <p class="text-gold-400 font-bold">S/ ${item.price.toFixed(2)}</p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-center gap-2 bg-night-800 rounded-lg p-1 border border-white/10">
+                            <button onclick="updateCartQuantity('${item.id}', -1)" class="w-6 h-6 rounded bg-night-700 text-white font-bold flex items-center justify-center hover:bg-gold-500 hover:text-night-900">-</button>
+                            <span class="font-bold text-white px-1">${item.quantity}</span>
+                            <button onclick="updateCartQuantity('${item.id}', 1)" class="w-6 h-6 rounded bg-night-700 text-white font-bold flex items-center justify-center hover:bg-gold-500 hover:text-night-900">+</button>
+                        </div>
+                    `;
+                    container.appendChild(row);
+                });
+            }
+
+            calculateCartTotal();
+            lucide.createIcons();
+        }
+
+        function calculateCartTotal() {
+            const subtotal = cart.reduce((acc, item) => acc + (item.price * item.quantity), 0);
+            
+            const zoneSelect = document.getElementById('cartZone');
+            const selectedOpt = zoneSelect.options[zoneSelect.selectedIndex];
+            let deliveryFee = parseFloat(selectedOpt.getAttribute('data-fee') || 5);
+
+            // Free delivery over 120 PEN
+            if (subtotal >= 120) {
+                deliveryFee = 0;
+            }
+
+            const total = subtotal + deliveryFee;
+
+            document.getElementById('cartSubtotal').innerText = `S/ ${subtotal.toFixed(2)}`;
+            document.getElementById('cartDeliveryFee').innerText = deliveryFee === 0 ? '¡GRATIS!' : `S/ ${deliveryFee.toFixed(2)}`;
+            document.getElementById('cartTotal').innerText = `S/ ${total.toFixed(2)}`;
+        }
+
+        // Zone Info Change Handler for Landing Section
+        function updateZoneInfo() {
+            const zone = document.getElementById('zoneSelect').value;
+            const timeEl = document.getElementById('zoneTime');
+            const feeEl = document.getElementById('zoneFee');
+            const titleEl = document.getElementById('zoneTitle');
+            const descEl = document.getElementById('zoneDesc');
+
+            const data = {
+                centro: { time: '15 - 25 min', fee: 'S/ 5.00', title: 'Centro Histórico & San Blas', desc: 'Súper rápido para hoteles, Airbnb, departamentos y locales.' },
+                wanchaq: { time: '20 - 30 min', fee: 'S/ 5.00', title: 'Wanchaq & Magisterio', desc: 'Atención exprés para viviendas residenciales y urbanizaciones.' },
+                san_sebastian: { time: '25 - 35 min', fee: 'S/ 7.00', title: 'San Sebastián & Santa Rosa', desc: 'Entrega directa de licores originales en mochilas térmicas.' },
+                san_jeronimo: { time: '30 - 40 min', fee: 'S/ 8.00', title: 'San Jerónimo & Larapa', desc: 'Ideal para reuniones de fin de semana y eventos.' },
+                santiago: { time: '25 - 35 min', fee: 'S/ 6.00', title: 'Santiago & Ttio', desc: 'Entrega rápida a domicilio en zonas urbanas de Santiago.' },
+                sacsayhuaman: { time: '30 - 40 min', fee: 'S/ 8.00', title: 'Zona Alta & Sacsayhuamán', desc: 'Atención especial en hospedajes altos de San Blas y alrededores.' }
+            };
+
+            if (data[zone]) {
+                timeEl.innerText = data[zone].time;
+                feeEl.innerText = data[zone].fee;
+                titleEl.innerText = data[zone].title;
+                descEl.innerText = data[zone].desc;
+            }
+        }
+
+  // Enviar pedido directamente a Google Sheets vía Make
+async function sendOrderWhatsApp() {
+    if (cart.length === 0) {
+        alert('Añade al menos una botella a tu pedido.');
+        return;
+    }
+
+    const name = document.getElementById('custName').value.trim();
+    const phone = document.getElementById('custPhone').value.trim();
+    const address = document.getElementById('custAddress').value.trim();
+    const email = document.getElementById('custEmail') ? document.getElementById('custEmail').value.trim() : '';
+
+    if (!name || !phone) {
+        alert('Por favor llena tu Nombre y Teléfono.');
+        return;
+    }
+
+    const payment = document.getElementById('custPayment').value;
+    const zoneText = document.getElementById('cartZone').options[document.getElementById('cartZone').selectedIndex].text;
+    const totalText = document.getElementById('cartTotal').innerText;
+
+    let itemsList = cart.map(item => `${item.quantity}x ${item.name}`).join(', ');
+
+    const payload = {
+        cliente: name,
+        telefono: phone,
+        email: email,
+        direccion: `${address} (${zoneText})`,
+        productos: itemsList,
+        total: totalText,
+        fecha: new Date().toLocaleString("es-PE", { timeZone: "America/Lima" })
+    };
+
+    try {
+        await fetch("https://hook.us2.make.com/kmjz83gp35pbka3bungaltroc5krdn1z", {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify(payload)
+        });
+
+        alert('¡Pedido registrado con éxito!');
+        toggleCartModal();
+        cart = [];
+        updateCartBadge();
+    } catch (e) {
+        console.log("Error al enviar a Make:", e);
+        alert('Ocurrió un error al procesar el pedido.');
+    }
+}
+        // Accordion FAQ Toggle
+        function toggleFaq(id) {
+            const el = document.getElementById(id);
+            const icon = document.getElementById(`icon-${id}`);
+            if (el.classList.contains('hidden')) {
+                el.classList.remove('hidden');
+                icon.classList.add('rotate-180');
+            } else {
+                el.classList.add('hidden');
+                icon.classList.remove('rotate-180');
+            }
+        }
+
+        // Initialize on window load
+        window.onload = function() {
+            lucide.createIcons();
+            renderProducts();
+            updateCartBadge();
+        };
+    </script>
+</body>
+</html>
