@@ -2,23 +2,25 @@
 <html lang="es" class="scroll-smooth">
 <head>
     <!-- Open Graph con tu imagen LOGO -->
-<meta property="og:type" content="website">
-<meta property="og:url" content="https://licoreria-pochita.netlify.app/">
-<meta property="og:title" content="Licorería Pochita Cusco | Delivery 24/7">
-<meta property="og:description" content="Tu delivery de botellas y licores de marca en Cusco. Whisky, Ron, Vodka, Tequila y Pisco a tu puerta.">
-<meta property="og:image" content="https://licoreria-pochita.netlify.app/LOGO.PNG">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://licoreria-pochita.netlify.app/">
+    <meta property="og:title" content="Licorería Pochita Cusco | Delivery 24/7">
+    <meta property="og:description" content="Tu delivery de botellas y licores de marca en Cusco. Whisky, Ron, Vodka, Tequila y Pisco a tu puerta.">
+    <meta property="og:image" content="https://licoreria-pochita.netlify.app/LOGO.PNG">
 
-<!-- Twitter -->
-<meta property="twitter:card" content="summary">
-<meta property="twitter:url" content="https://licoreria-pochita.netlify.app/">
-<meta property="twitter:title" content="Licorería Pochita Cusco | Delivery 24/7">
-<meta property="twitter:description" content="Delivery de licores originales en Cusco a la puerta de tu casa.">
-<meta property="twitter:image" content="https://licoreria-pochita.netlify.app/LOGO.PNG">
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary">
+    <meta property="twitter:url" content="https://licoreria-pochita.netlify.app/">
+    <meta property="twitter:title" content="Licorería Pochita Cusco | Delivery 24/7">
+    <meta property="twitter:description" content="Delivery de licores originales en Cusco a la puerta de tu casa.">
+    <meta property="twitter:image" content="https://licoreria-pochita.netlify.app/LOGO.PNG">
+    
     <!-- Favicon -->
     <link rel="icon" type="image/x-icon" href="favicon.ico">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Licorería Pochita | Venta y Delivery de Licores y Botellas en Cusco 24/7</title>
+    
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
     
@@ -92,7 +94,6 @@
             box-shadow: 0 0 20px rgba(245, 158, 11, 0.5);
             transform: scale(1.02);
         }
-        /* Custom Scrollbar */
         ::-webkit-scrollbar {
             width: 8px;
         }
@@ -113,7 +114,6 @@
     <!-- NAV BAR -->
     <nav class="fixed top-0 left-0 w-full z-40 bg-night-900/80 backdrop-blur-md border-b border-white/10 px-4 lg:px-8 py-3 transition-all duration-300">
         <div class="max-w-7xl mx-auto flex items-center justify-between">
-            <!-- Brand Logo -->
             <a href="#" class="flex items-center gap-3 group">
                 <div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-gold-600 to-yellow-400 flex items-center justify-center text-night-900 font-heading font-extrabold text-xl shadow-lg shadow-gold-500/20 group-hover:scale-105 transition-transform">
                     🍾
@@ -126,7 +126,6 @@
                 </div>
             </a>
 
-            <!-- Nav Links Desktop -->
             <div class="hidden md:flex items-center gap-8 text-sm font-medium text-gray-300">
                 <a href="#licores" class="hover:text-gold-400 transition-colors">Catálogo de Botellas</a>
                 <a href="#beneficios" class="hover:text-gold-400 transition-colors">Por qué Pochita</a>
@@ -135,42 +134,35 @@
                 <a href="#faq" class="hover:text-gold-400 transition-colors">Preguntas</a>
             </div>
 
-            <!-- Quick Action Buttons -->
             <div class="flex items-center gap-3">
                 <button onclick="toggleCartModal()" class="relative p-2.5 rounded-xl bg-night-700 border border-white/10 hover:border-gold-500/50 text-gray-200 transition-all flex items-center gap-2">
                     <i data-lucide="shopping-bag" class="w-5 h-5 text-gold-400"></i>
                     <span class="hidden sm:inline text-xs font-bold">Ver Pedido</span>
                     <span id="cartBadge" class="hidden absolute -top-1.5 -right-1.5 bg-gold-500 text-night-900 font-bold text-xs w-5 h-5 rounded-full flex items-center justify-center shadow-lg">0</span>
                 </button>
-       
             </div>
         </div>
     </nav>
 
     <!-- HERO SECTION -->
     <section class="relative pt-32 pb-20 md:pt-40 md:pb-28 px-4 bg-glow overflow-hidden">
-        <!-- Floating Ambient Elements -->
         <div class="absolute top-1/4 -left-20 w-72 h-72 bg-gold-500/10 rounded-full blur-3xl pointer-events-none"></div>
         <div class="absolute top-1/3 -right-20 w-80 h-80 bg-neon-cyan/10 rounded-full blur-3xl pointer-events-none"></div>
 
         <div class="max-w-7xl mx-auto text-center relative z-10">
-            <!-- Alert Badge -->
             <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-night-800/90 border border-gold-500/30 text-gold-400 text-xs sm:text-sm font-semibold mb-8 animate-pulse shadow-xl">
                 <span class="w-2 h-2 rounded-full bg-neon-lime"></span>
                 <span>🛵 Delivery de Botellas y Licores en Cusco • Atención 24 Horas</span>
             </div>
 
-            <!-- Main Headline -->
             <h1 class="font-heading font-black text-4xl sm:text-6xl lg:text-7xl tracking-tight text-white max-w-5xl mx-auto leading-tight mb-6">
                 Tus <span class="gold-gradient-text">marcas de licores favoritas</span> en tu puerta en <span class="text-neon-lime underline decoration-gold-500/50 decoration-wavy">30 min o menos</span>
             </h1>
 
-            <!-- Subtitle -->
             <p class="text-gray-300 text-base sm:text-lg lg:text-xl max-w-3xl mx-auto font-normal leading-relaxed mb-10">
                 Whisky, Ron, Vodka, Tequila, Pisco y Ginebra 100% originales. Te los llevamos helados o a temperatura ideal a tu casa, hotel o departamento en Cusco con hielos y complementos. <strong class="text-white">¡Pide tu botella ahora!</strong>
             </p>
 
-            <!-- Hero CTA Buttons -->
             <div class="flex flex-col sm:flex-row items-center justify-center gap-4 max-w-md mx-auto mb-16">
                 <button onclick="toggleCartModal()" class="w-full sm:w-auto gold-btn text-night-900 font-extrabold text-base px-8 py-4 rounded-xl flex items-center justify-center gap-3 shadow-xl">
                     <i data-lucide="zap" class="w-5 h-5 fill-night-900"></i>
@@ -178,40 +170,8 @@
                 </button>
                 <a href="#licores" class="w-full sm:w-auto glass-card hover:bg-white/10 text-white font-bold text-base px-8 py-4 rounded-xl flex items-center justify-center gap-2 transition-all border border-white/10">
                     <i data-lucide="grid" class="w-5 h-5 text-gold-400"></i>
-                    <span>Ver Catalogo de Botellas</span>
+                    <span>Ver Catálogo Completo</span>
                 </a>
-            </div>
-
-            <!-- Trust Micro-Badges -->
-            <div class="grid grid-cols-2 md:grid-cols-4 gap-4 max-w-4xl mx-auto pt-6 border-t border-white/10 text-left">
-                <div class="flex items-center gap-3 p-3 rounded-lg bg-night-800/40 border border-white/5">
-                    <div class="p-2 bg-gold-500/10 rounded-lg text-gold-400"><i data-lucide="shield-check" class="w-5 h-5"></i></div>
-                    <div>
-                        <p class="text-xs text-gray-400">Garantía</p>
-                        <p class="text-sm font-bold text-white">100% Originales</p>
-                    </div>
-                </div>
-                <div class="flex items-center gap-3 p-3 rounded-lg bg-night-800/40 border border-white/5">
-                    <div class="p-2 bg-gold-500/10 rounded-lg text-gold-400"><i data-lucide="snowflake" class="w-5 h-5"></i></div>
-                    <div>
-                        <p class="text-xs text-gray-400">Complementos</p>
-                        <p class="text-sm font-bold text-white">Hielo y Gaseosas</p>
-                    </div>
-                </div>
-                <div class="flex items-center gap-3 p-3 rounded-lg bg-night-800/40 border border-white/5">
-                    <div class="p-2 bg-gold-500/10 rounded-lg text-gold-400"><i data-lucide="wallet" class="w-5 h-5"></i></div>
-                    <div>
-                        <p class="text-xs text-gray-400">Pagos</p>
-                        <p class="text-sm font-bold text-white">Yape, Plin, Tarjeta</p>
-                    </div>
-                </div>
-                <div class="flex items-center gap-3 p-3 rounded-lg bg-night-800/40 border border-white/5">
-                    <div class="p-2 bg-gold-500/10 rounded-lg text-gold-400"><i data-lucide="clock" class="w-5 h-5"></i></div>
-                    <div>
-                        <p class="text-xs text-gray-400">Promedio</p>
-                        <p class="text-sm font-bold text-white">25-30 Minutos</p>
-                    </div>
-                </div>
             </div>
         </div>
     </section>
@@ -220,28 +180,87 @@
     <section id="licores" class="py-20 px-4 bg-night-800/50 relative">
         <div class="max-w-7xl mx-auto">
             <div class="text-center mb-14">
-                <span class="text-xs font-bold uppercase tracking-widest text-gold-400 bg-gold-500/10 px-3 py-1 rounded-full border border-gold-500/20">Catálogo de Botellas</span>
+                <span class="text-xs font-bold uppercase tracking-widest text-gold-400 bg-gold-500/10 px-3 py-1 rounded-full border border-gold-500/20">Catálogo Completo</span>
                 <h2 class="font-heading font-black text-3xl sm:text-5xl text-white mt-3">Licores Originales en Cusco</h2>
                 <p class="text-gray-400 text-sm sm:text-base max-w-xl mx-auto mt-2">Encuentra tus botellas favoritas de Ron, Whisky, Vodka, Tequila, Pisco y Ginebra.</p>
             </div>
 
-            <!-- Category Filter Tabs -->
-            <div class="flex justify-center gap-2 mb-10 overflow-x-auto pb-2 scrollbar-none" id="categoryFilter">
-                <button onclick="filterCategory('todos')" class="cat-btn active px-5 py-2.5 rounded-full text-xs sm:text-sm font-bold bg-gold-500 text-night-900 transition-all">🔥 Todos los Licores</button>
-                <button onclick="filterCategory('whisky')" class="cat-btn px-5 py-2.5 rounded-full text-xs sm:text-sm font-bold bg-night-700 text-gray-300 hover:bg-night-600 transition-all">🥃 Whisky</button>
-                <button onclick="filterCategory('ron')" class="cat-btn px-5 py-2.5 rounded-full text-xs sm:text-sm font-bold bg-night-700 text-gray-300 hover:bg-night-600 transition-all">🍹 Ron</button>
-                <button onclick="filterCategory('vodka')" class="cat-btn px-5 py-2.5 rounded-full text-xs sm:text-sm font-bold bg-night-700 text-gray-300 hover:bg-night-600 transition-all">🍸 Vodka & Tequila</button>
-                <button onclick="filterCategory('pisco')" class="cat-btn px-5 py-2.5 rounded-full text-xs sm:text-sm font-bold bg-night-700 text-gray-300 hover:bg-night-600 transition-all">🇵🇪 Pisco & Gin</button>
+            <!-- Filtros por Tipo -->
+            <div class="space-y-3 mb-10">
+                <div class="flex justify-center gap-2 overflow-x-auto pb-2 scrollbar-none" id="categoryFilter">
+                    <button onclick="filterCategory('todos')" class="cat-btn active px-4 py-2 rounded-full text-xs font-bold bg-gold-500 text-night-900 transition-all">🔥 Todos</button>
+                    <button onclick="filterCategory('ron')" class="cat-btn px-4 py-2 rounded-full text-xs font-bold bg-night-700 text-gray-300 hover:bg-night-600 transition-all">🍹 Ron</button>
+                    <button onclick="filterCategory('whisky')" class="cat-btn px-4 py-2 rounded-full text-xs font-bold bg-night-700 text-gray-300 hover:bg-night-600 transition-all">🥃 Whisky</button>
+                    <button onclick="filterCategory('vodka')" class="cat-btn px-4 py-2 rounded-full text-xs font-bold bg-night-700 text-gray-300 hover:bg-night-600 transition-all">🍸 Vodka</button>
+                    <button onclick="filterCategory('tequila')" class="cat-btn px-4 py-2 rounded-full text-xs font-bold bg-night-700 text-gray-300 hover:bg-night-600 transition-all">🌵 Tequila</button>
+                    <button onclick="filterCategory('pisco')" class="cat-btn px-4 py-2 rounded-full text-xs font-bold bg-night-700 text-gray-300 hover:bg-night-600 transition-all">🇵🇪 Pisco</button>
+                    <button onclick="filterCategory('gin')" class="cat-btn px-4 py-2 rounded-full text-xs font-bold bg-night-700 text-gray-300 hover:bg-night-600 transition-all">🍸 Gin</button>
+                </div>
+            </div>
+
+       <!-- Sub-Filtro por País (Dinámico) -->
+            <div class="flex flex-wrap justify-center items-center gap-2 pt-4 border-t border-white/5 mb-10" id="countryFilterContainer">
+                <span class="text-xs text-gray-400 font-semibold mr-2">País:</span>
+                <button onclick="filterCountry('todos')" class="country-btn active px-3 py-1 rounded-lg text-xs font-semibold bg-gold-500/20 text-gold-400 border border-gold-500/30 transition-all">🌎 Todos</button>
+                
+                <!-- Países de Whisky -->
+                <div id="whiskyCountryFilters" class="inline-flex flex-wrap gap-2">
+                    <button onclick="filterCountry('escocia')" class="country-btn px-3 py-1 rounded-lg text-xs font-semibold bg-night-800 text-gray-400 border border-white/10 hover:bg-night-700 transition-all">🏴󠁧󠁢󠁳󠁣󠁴󠁿 Escocia</button>
+                    <button onclick="filterCountry('usa')" class="country-btn px-3 py-1 rounded-lg text-xs font-semibold bg-night-800 text-gray-400 border border-white/10 hover:bg-night-700 transition-all">🇺🇸 EE.UU.</button>
+                    <button onclick="filterCountry('irlanda')" class="country-btn px-3 py-1 rounded-lg text-xs font-semibold bg-night-800 text-gray-400 border border-white/10 hover:bg-night-700 transition-all">🇮🇪 Irlanda</button>
+                    <button onclick="filterCountry('japon')" class="country-btn px-3 py-1 rounded-lg text-xs font-semibold bg-night-800 text-gray-400 border border-white/10 hover:bg-night-700 transition-all">🇯🇵 Japón</button>
+                </div>
+
+                <!-- Países de Ron -->
+                <div id="ronCountryFilters" class="inline-flex flex-wrap gap-2">
+                    <button onclick="filterCountry('peru')" class="country-btn px-3 py-1 rounded-lg text-xs font-semibold bg-night-800 text-gray-400 border border-white/10 hover:bg-night-700 transition-all">🇵🇪 Perú</button>
+                    <button onclick="filterCountry('guatemala')" class="country-btn px-3 py-1 rounded-lg text-xs font-semibold bg-night-800 text-gray-400 border border-white/10 hover:bg-night-700 transition-all">🇬🇹 Guatemala</button>
+                    <button onclick="filterCountry('nicaragua')" class="country-btn px-3 py-1 rounded-lg text-xs font-semibold bg-night-800 text-gray-400 border border-white/10 hover:bg-night-700 transition-all">🇳🇮 Nicaragua</button>
+                    <button onclick="filterCountry('venezuela')" class="country-btn px-3 py-1 rounded-lg text-xs font-semibold bg-night-800 text-gray-400 border border-white/10 hover:bg-night-700 transition-all">🇻🇪 Venezuela</button>
+                    <button onclick="filterCountry('puertorico')" class="country-btn px-3 py-1 rounded-lg text-xs font-semibold bg-night-800 text-gray-400 border border-white/10 hover:bg-night-700 transition-all">🇵🇷 Puerto Rico</button>
+                    <button onclick="filterCountry('repdominicana')" class="country-btn px-3 py-1 rounded-lg text-xs font-semibold bg-night-800 text-gray-400 border border-white/10 hover:bg-night-700 transition-all">🇩🇴 Rep. Dominicana</button>
+                    <button onclick="filterCountry('cuba')" class="country-btn px-3 py-1 rounded-lg text-xs font-semibold bg-night-800 text-gray-400 border border-white/10 hover:bg-night-700 transition-all">🇨🇺 Cuba</button>
+                </div>
+
+                <!-- Países de Vodka -->
+                <div id="vodkaCountryFilters" class="inline-flex flex-wrap gap-2 hidden">
+                    <button onclick="filterCountry('francia')" class="country-btn px-3 py-1 rounded-lg text-xs font-semibold bg-night-800 text-gray-400 border border-white/10 hover:bg-night-700 transition-all">🇫🇷 Francia</button>
+                    <button onclick="filterCountry('polonia')" class="country-btn px-3 py-1 rounded-lg text-xs font-semibold bg-night-800 text-gray-400 border border-white/10 hover:bg-night-700 transition-all">🇵🇱 Polonia</button>
+                    <button onclick="filterCountry('suecia')" class="country-btn px-3 py-1 rounded-lg text-xs font-semibold bg-night-800 text-gray-400 border border-white/10 hover:bg-night-700 transition-all">🇸🇪 Suecia</button>
+                    <button onclick="filterCountry('peru')" class="country-btn px-3 py-1 rounded-lg text-xs font-semibold bg-night-800 text-gray-400 border border-white/10 hover:bg-night-700 transition-all">🇵🇪 Perú</button>
+                    <button onclick="filterCountry('usa')" class="country-btn px-3 py-1 rounded-lg text-xs font-semibold bg-night-800 text-gray-400 border border-white/10 hover:bg-night-700 transition-all">🇺🇸 EE.UU.</button>
+                    <button onclick="filterCountry('finlandia')" class="country-btn px-3 py-1 rounded-lg text-xs font-semibold bg-night-800 text-gray-400 border border-white/10 hover:bg-night-700 transition-all">🇫🇮 Finlandia</button>
+                    <button onclick="filterCountry('rusia')" class="country-btn px-3 py-1 rounded-lg text-xs font-semibold bg-night-800 text-gray-400 border border-white/10 hover:bg-night-700 transition-all">🇷🇺 Rusia</button>
+                </div>
+                <!-- Países de Tequila -->
+                <div id="tequilaCountryFilters" class="inline-flex flex-wrap gap-2 hidden">
+                    <button onclick="filterCountry('mexico')" class="country-btn px-3 py-1 rounded-lg text-xs font-semibold bg-night-800 text-gray-400 border border-white/10 hover:bg-night-700 transition-all">🇲🇽 México</button>
+                    <button onclick="filterCountry('reino_unido')" class="country-btn px-3 py-1 rounded-lg text-xs font-semibold bg-night-800 text-gray-400 border border-white/10 hover:bg-night-700 transition-all">🇬🇧 Reino Unido</button>
+                    <button onclick="filterCountry('usa')" class="country-btn px-3 py-1 rounded-lg text-xs font-semibold bg-night-800 text-gray-400 border border-white/10 hover:bg-night-700 transition-all">🇺🇸 EE.UU.</button>
+                    <button onclick="filterCountry('suiza')" class="country-btn px-3 py-1 rounded-lg text-xs font-semibold bg-night-800 text-gray-400 border border-white/10 hover:bg-night-700 transition-all">🇨🇭 Suiza / Bermudas</button>
+                </div>
+
+                <!-- Países de Pisco -->
+                <div id="piscoCountryFilters" class="inline-flex flex-wrap gap-2 hidden">
+                    <button onclick="filterCountry('peru')" class="country-btn px-3 py-1 rounded-lg text-xs font-semibold bg-night-800 text-gray-400 border border-white/10 hover:bg-night-700 transition-all">🇵🇪 Perú</button>
+                    <button onclick="filterCountry('chile')" class="country-btn px-3 py-1 rounded-lg text-xs font-semibold bg-night-800 text-gray-400 border border-white/10 hover:bg-night-700 transition-all">🇨🇱 Chile</button>
+                </div>
+                <!-- Países de Gin -->
+                <div id="ginCountryFilters" class="inline-flex flex-wrap gap-2 hidden">
+                    <button onclick="filterCountry('reino_unido')" class="country-btn px-3 py-1 rounded-lg text-xs font-semibold bg-night-800 text-gray-400 border border-white/10 hover:bg-night-700 transition-all">🇬🇧 Reino Unido</button>
+                    <button onclick="filterCountry('peru')" class="country-btn px-3 py-1 rounded-lg text-xs font-semibold bg-night-800 text-gray-400 border border-white/10 hover:bg-night-700 transition-all">🇵🇪 Perú</button>
+                    <button onclick="filterCountry('alemania')" class="country-btn px-3 py-1 rounded-lg text-xs font-semibold bg-night-800 text-gray-400 border border-white/10 hover:bg-night-700 transition-all">🇩🇪 Alemania</button>
+                    <button onclick="filterCountry('espana')" class="country-btn px-3 py-1 rounded-lg text-xs font-semibold bg-night-800 text-gray-400 border border-white/10 hover:bg-night-700 transition-all">🇪🇸 España</button>
+                </div>
             </div>
 
             <!-- Products Grid -->
             <div id="productsGrid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-                <!-- Dynamically Inserted Products -->
+                <!-- Se inyectarán los productos -->
             </div>
         </div>
     </section>
-
-    <!-- CUSCO DELIVERY ZONES SECTION -->
+  <!-- CUSCO DELIVERY ZONES SECTION -->
     <section id="zonas" class="py-20 px-4 bg-night-900 relative">
         <div class="max-w-5xl mx-auto">
             <div class="glass-card rounded-3xl p-6 sm:p-10 border border-gold-500/20 relative overflow-hidden">
@@ -258,13 +277,13 @@
                             <div>
                                 <label class="block text-xs font-semibold text-gray-300 uppercase tracking-wider mb-2">Tu ubicación en Cusco:</label>
                                 <select id="zoneSelect" onchange="updateZoneInfo()" class="w-full bg-night-800 border border-white/20 text-white rounded-xl px-4 py-3 focus:outline-none focus:border-gold-500 font-medium text-sm">
-                                    <option value="centro">Centro Histórico / Plaza de Armas</option>
-                                    <option value="wanchaq">Wanchaq (Av. El Sol, Magisterio, Marcavalle)</option>
-                                    <option value="san_sebastian">San Sebastián / Santa Rosa</option>
-                                    <option value="san_jeronimo">San Jerónimo / Larapa</option>
-                                    <option value="santiago">Santiago / Ttio</option>
-                                    <option value="sacsayhuaman">Zona Alta / San Blas alto</option>
-                                </select>
+                                <option value="centro">Centro Histórico / San Blas / Siete Angelitos</option>
+                                <option value="wanchaq">Wanchaq (Av. El Sol, Magisterio, Marcavalle)</option>
+                                <option value="santiago">Santiago / Ttio / Huancaro</option>
+                                <option value="san_sebastian">San Sebastián / Santa Rosa</option>
+                                <option value="san_jeronimo">San Jerónimo / Larapa</option>
+                                <option value="zona_alta">Zona Alta / Mirador / Sapantiana</option>
+                            </select>
                             </div>
 
                             <div class="p-4 rounded-xl bg-night-900/80 border border-white/10 grid grid-cols-2 gap-4 text-center">
@@ -433,8 +452,7 @@
             </div>
         </div>
     </section>
-
-    <!-- FAQ SECTION -->
+ <!-- FAQ SECTION -->
     <section id="faq" class="py-20 px-4 bg-night-800/40">
         <div class="max-w-4xl mx-auto">
             <div class="text-center mb-14">
@@ -490,456 +508,573 @@
         </div>
     </section>
 
-    <!-- SHOPPING CART & ORDER MODAL -->
-    
-<!-- Modal Carrito -->
-<div id="cartModal" class="fixed inset-0 z-50 bg-black/80 backdrop-blur-md hidden flex items-center justify-center p-4">
-    <div class="bg-night-800 border border-gold-500/30 rounded-3xl w-full max-w-xl max-h-[90vh] overflow-y-auto p-6 sm:p-8 relative shadow-2xl">
-        <!-- Botón Cerrar -->
-        <button onclick="toggleCartModal()" class="absolute top-5 right-5 text-gray-400 hover:text-white p-2">
-            <i data-lucide="x" class="w-6 h-6"></i>
-        </button>
+    <!-- SHOPPING CART MODAL -->
+    <div id="cartModal" class="fixed inset-0 z-50 bg-black/80 backdrop-blur-md hidden flex items-center justify-center p-4">
+        <div class="bg-night-800 border border-gold-500/30 rounded-3xl w-full max-w-xl max-h-[90vh] overflow-y-auto p-6 sm:p-8 relative shadow-2xl">
+            <button onclick="toggleCartModal()" class="absolute top-5 right-5 text-gray-400 hover:text-white p-2">
+                <i data-lucide="x" class="w-6 h-6"></i>
+            </button>
 
-        <!-- Encabezado Modal -->
-        <div class="flex items-center gap-3 border-b border-white/10 pb-4 mb-6">
-            <div class="p-2.5 bg-gold-500/10 text-gold-400 rounded-xl">
-                <i data-lucide="shopping-bag" class="w-6 h-6"></i>
+            <h3 class="font-heading font-black text-2xl text-white mb-2 flex items-center gap-2">
+                <i data-lucide="shopping-cart" class="w-6 h-6 text-gold-400"></i> Tu Pedido de Licores
+            </h3>
+            <p class="text-xs text-gray-400 mb-6">Revisa tus botellas y completa tus datos para enviar por WhatsApp.</p>
+
+            <div id="cartItemsList" class="space-y-3 mb-6 divide-y divide-white/10">
+                <p class="text-center text-sm text-gray-400 py-4">Tu carrito está vacío</p>
             </div>
-            <div>
-                <h3 class="font-heading font-black text-xl text-white">Tu Pedido de Licores - Pochita</h3>
-                <p class="text-xs text-gray-400">Verifica tus botellas y completa tus datos para realizar el pedido</p>
-            </div>
-        </div>
 
-        <!-- Contenedor de Items -->
-        <div id="cartItems" class="space-y-3 mb-6"></div>
-
-        <!-- Formulario Datos de Entrega -->
-        <div class="space-y-4 border-t border-white/10 pt-4 mb-6">
-            <h4 class="font-bold text-sm text-gold-400 uppercase tracking-wider">Datos de Entrega en Cusco</h4>
-
-            <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
-                <div>
-                    <label class="block text-xs font-medium text-gray-300 mb-1">Tu Nombre:</label>
-                    <input type="text" id="custName" placeholder="Ej: Carlos Perez" class="w-full bg-night-900 border border-white/10 rounded-xl px-3 py-2 text-sm text-white focus:outline-none focus:border-gold-500">
+            <div class="border-t border-white/10 pt-4 mb-6 space-y-2">
+                <div class="flex justify-between text-sm text-gray-300">
+                    <span>Subtotal:</span>
+                    <span id="cartSubtotal" class="font-bold text-white">S/ 0.00</span>
                 </div>
-                <div>
-                    <label class="block text-xs font-medium text-gray-300 mb-1">Teléfono:</label>
-                    <input type="tel" id="custPhone" placeholder="Ej: 987654321" class="w-full bg-night-900 border border-white/10 rounded-xl px-3 py-2 text-sm text-white focus:outline-none focus:border-gold-500">
+                <div class="flex justify-between text-sm text-gray-300">
+                    <span>Delivery (Cusco):</span>
+                    <span id="cartDelivery" class="font-bold text-neon-lime">S/ 5.00</span>
+                </div>
+                <div class="flex justify-between text-lg font-black text-white pt-2 border-t border-white/10">
+                    <span>Total Estimado:</span>
+                    <span id="cartTotal" class="text-gold-400">S/ 5.00</span>
                 </div>
             </div>
 
-            <div>
-                <label class="block text-xs font-medium text-gray-300 mb-1">Correo Electrónico:</label>
-                <input type="email" id="custEmail" placeholder="Ej: tu@correo.com" class="w-full bg-night-900 border border-white/10 rounded-xl px-3 py-2 text-sm text-white focus:outline-none focus:border-gold-500">
-            </div>
-
-            <div>
-                <label class="block text-xs font-medium text-gray-300 mb-1">Zona / Distrito en Cusco:</label>
-                <select id="cartZone" onchange="calculateCartTotal()" class="w-full bg-night-900 border border-white/10 rounded-xl px-3 py-2 text-sm text-white focus:outline-none focus:border-gold-500">
-                    <option value="centro" data-fee="5">Centro Histórico / San Blas (S/ 5.00)</option>
-                    <option value="wanchaq" data-fee="5">Wanchaq / Magisterio (S/ 5.00)</option>
-                    <option value="san_sebastian" data-fee="7">San Sebastián (S/ 7.00)</option>
-                    <option value="san_jeronimo" data-fee="8">San Jerónimo / Larapa (S/ 8.00)</option>
-                    <option value="santiago" data-fee="6">Santiago / Ttio (S/ 6.00)</option>
-                </select>
-            </div>
-
-            <div>
-                <label class="block text-xs font-medium text-gray-300 mb-1">Dirección Exacta o Referencia:</label>
-                <input type="text" id="custAddress" placeholder="Ej: Calle Plateros 320, Dpto 302" class="w-full bg-night-900 border border-white/10 rounded-xl px-3 py-2 text-sm text-white focus:outline-none focus:border-gold-500">
-            </div>
-
-            <div>
-                <label class="block text-xs font-medium text-gray-300 mb-1">Método de Pago Preferido:</label>
-                <select id="custPayment" class="w-full bg-night-900 border border-white/10 rounded-xl px-3 py-2 text-sm text-white focus:outline-none focus:border-gold-500">
-                    <option value="Yape">Yape / Plin</option>
-                    <option value="Efectivo">Efectivo contra entrega</option>
-                    <option value="Tarjeta">Tarjeta de Crédito / Débito (+POS)</option>
-                </select>
+            <div class="space-y-4">
+                <div>
+                    <label class="block text-xs font-semibold text-gray-300 uppercase mb-1">Nombre completo:</label>
+                    <input type="text" id="orderName" placeholder="Ej: Carlos Mendoza" class="w-full bg-night-900 border border-white/20 text-white rounded-xl px-4 py-2.5 text-sm focus:outline-none focus:border-gold-500">
+                </div>
+                <div>
+                    <label class="block text-xs font-semibold text-gray-300 uppercase mb-1">Dirección de entrega o Referencia:</label>
+                    <input type="text" id="orderAddress" placeholder="Ej: Calle Plateros 123 / Hotel El Puma" class="w-full bg-night-900 border border-white/20 text-white rounded-xl px-4 py-2.5 text-sm focus:outline-none focus:border-gold-500">
+                </div>
+                <div>
+                    <label class="block text-xs font-semibold text-gray-300 uppercase mb-1">Método de pago preferido:</label>
+                    <select id="orderPayment" class="w-full bg-night-900 border border-white/20 text-white rounded-xl px-4 py-2.5 text-sm focus:outline-none focus:border-gold-500">
+                        <option value="Yape / Plin">Yape / Plin</option>
+                        <option value="Efectivo">Efectivo contra entrega</option>
+                        <option value="Tarjeta">Tarjeta (+POS físico en puerta)</option>
+                        <option value="Transferencia">Transferencia BCP/Interbank</option>
+                    </select>
+                </div>
+                <button onclick="sendWhatsAppOrder()" class="w-full gold-btn py-4 rounded-xl text-night-900 font-extrabold text-base flex items-center justify-center gap-2 shadow-xl mt-4">
+                    <i data-lucide="message-square" class="w-5 h-5 fill-night-900"></i>
+                    <span>Confirmar Pedido por WhatsApp</span>
+                </button>
             </div>
         </div>
-
-        <!-- Desglose de Precios -->
-        <div class="p-4 bg-night-900 rounded-2xl border border-white/10 space-y-2 mb-6 text-sm">
-            <div class="flex justify-between text-gray-400">
-                <span>Subtotal Botellas:</span>
-                <span id="cartSubtotal" class="font-bold text-white">S/ 0.00</span>
-            </div>
-            <div class="flex justify-between text-gray-400">
-                <span>Costo Delivery Cusco:</span>
-                <span id="cartDeliveryFee" class="font-bold text-neon-lime">S/ 5.00</span>
-            </div>
-            <div class="flex justify-between text-base font-black text-white pt-2 border-t border-white/10">
-                <span>Total a Pagar:</span>
-                <span id="cartTotal" class="text-gold-400 font-heading text-xl">S/ 5.00</span>
-            </div>
-        </div>
-
-        <!-- Botón Confirmar (Dentro del contenedor) -->
-        <button onclick="sendOrderWhatsApp()" class="w-full gold-btn py-4 rounded-xl text-night-900 font-extrabold text-base flex items-center justify-center gap-3 shadow-lg">
-            <i data-lucide="send" class="w-5 h-5 fill-night-900"></i>
-            <span>Confirmar y Enviar Pedido</span>
-        </button>
     </div>
-</div>
-        <!-- Cart Items Container -->
-        <div id="cartItems" class="space-y-3 mb-6"></div>
 
-        <!-- Delivery Location Selection in Order -->
-        <div class="space-y-4 border-t border-white/10 pt-4 mb-6">
-            <h4 class="font-bold text-sm text-gold-400 uppercase tracking-wider">Datos de Entrega en Cusco</h4>
-
-            <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
-                <div>
-                    <label class="block text-xs font-medium text-gray-300 mb-1">Tu Nombre:</label>
-                    <input type="text" id="custName" placeholder="Ej: Carlos Perez" class="w-full bg-night-900 border border-white/10 rounded-xl px-3 py-2 text-sm text-white focus:outline-none focus:border-gold-500">
-                </div>
-                <div>
-                    <label class="block text-xs font-medium text-gray-300 mb-1">Teléfono:</label>
-                    <input type="tel" id="custPhone" placeholder="Ej: 987654321" class="w-full bg-night-900 border border-white/10 rounded-xl px-3 py-2 text-sm text-white focus:outline-none focus:border-gold-500">
-                </div>
-            </div>
-
-            <div>
-                <label class="block text-xs font-medium text-gray-300 mb-1">Correo Electrónico:</label>
-                <input type="email" id="custEmail" placeholder="Ej: tu@correo.com" class="w-full bg-night-900 border border-white/10 rounded-xl px-3 py-2 text-sm text-white focus:outline-none focus:border-gold-500">
-            </div>
-
-            <div>
-                <label class="block text-xs font-medium text-gray-300 mb-1">Zona / Distrito en Cusco:</label>
-                <select id="cartZone" onchange="calculateCartTotal()" class="w-full bg-night-900 border border-white/10 rounded-xl px-3 py-2 text-sm text-white focus:outline-none focus:border-gold-500">
-                    <option value="centro" data-fee="5">Centro Histórico / San Blas (S/ 5.00)</option>
-                    <option value="wanchaq" data-fee="5">Wanchaq / Magisterio (S/ 5.00)</option>
-                    <option value="san_sebastian" data-fee="7">San Sebastián (S/ 7.00)</option>
-                    <option value="san_jeronimo" data-fee="8">San Jerónimo / Larapa (S/ 8.00)</option>
-                    <option value="santiago" data-fee="6">Santiago / Ttio (S/ 6.00)</option>
-                </select>
-            </div>
-
-            <div>
-                <label class="block text-xs font-medium text-gray-300 mb-1">Dirección Exacta o Referencia:</label>
-                <input type="text" id="custAddress" placeholder="Ej: Calle Plateros 320, Dpto 302" class="w-full bg-night-900 border border-white/10 rounded-xl px-3 py-2 text-sm text-white focus:outline-none focus:border-gold-500">
-            </div>
-
-            <div>
-                <label class="block text-xs font-medium text-gray-300 mb-1">Método de Pago Preferido:</label>
-                <select id="custPayment" class="w-full bg-night-900 border border-white/10 rounded-xl px-3 py-2 text-sm text-white focus:outline-none focus:border-gold-500">
-                    <option value="Yape">Yape / Plin</option>
-                    <option value="Efectivo">Efectivo contra entrega</option>
-                    <option value="Tarjeta">Tarjeta de Crédito / Débito (+POS)</option>
-                </select>
-            </div>
-        </div>
-
-        <!-- Price Breakdown -->
-        <div class="p-4 bg-night-900 rounded-2xl border border-white/10 space-y-2 mb-6 text-sm">
-            <div class="flex justify-between text-gray-400">
-                <span>Subtotal Botellas:</span>
-                <span id="cartSubtotal" class="font-bold text-white">S/ 0.00</span>
-            </div>
-            <div class="flex justify-between text-gray-400">
-                <span>Costo Delivery Cusco:</span>
-                <span id="cartDeliveryFee" class="font-bold text-neon-lime">S/ 5.00</span>
-            </div>
-            <div class="flex justify-between text-base font-black text-white pt-2 border-t border-white/10">
-                <span>Total a Pagar:</span>
-                <span id="cartTotal" class="text-gold-400 font-heading text-xl">S/ 5.00</span>
-            </div>
-        </div>
-
-        <!-- BOTÓN CONFIRMAR PEDIDO -->
-        <button onclick="sendOrderWhatsApp()" class="w-full gold-btn py-4 rounded-xl text-night-900 font-extrabold text-base flex items-center justify-center gap-3 shadow-lg">
-            <i data-lucide="send" class="w-5 h-5 fill-night-900"></i>
-            <span>Confirmar y Enviar Pedido</span>
-        </button>
-    </div>
-     <!-- BOTÓN CONFIRMAR PEDIDO -->
-        <button onclick="sendOrderWhatsApp()" class="w-full gold-btn py-4 rounded-xl text-night-900 font-extrabold text-base flex items-center justify-center gap-3 shadow-lg">
-            <i data-lucide="send" class="w-5 h-5 fill-night-900"></i>
-            <span>Confirmar y Enviar Pedido</span>
-        </button>
-    </div>
-</div>
-    <!-- FOOTER -->
-    <footer class="bg-night-900 border-t border-white/10 py-12 px-4 text-gray-400 text-xs sm:text-sm">
-        <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
-            <div>
-                <div class="flex items-center gap-2 mb-3">
-                    <span class="text-2xl">🍾</span>
-                    <span class="font-heading font-black text-lg text-white">LICORERÍA POCHITA CUSCO</span>
-                </div>
-                <p class="text-gray-400 leading-relaxed text-xs">
-                    Tu delivery de botellas y licores de marca en Cusco. Whisky, Ron, Vodka, Tequila, Pisco y Ginebra originales a la puerta de tu casa u hotel.
-                </p>
-            </div>
-
-            <div>
-                <h4 class="font-bold text-white uppercase tracking-wider mb-3">Atención & Contacto</h4>
-                <ul class="space-y-2 text-xs">
-                    <li class="flex items-center gap-2"><i data-lucide="phone" class="w-4 h-4 text-gold-400"></i> +51 987 654 321</li>
-                    <li class="flex items-center gap-2"><i data-lucide="map-pin" class="w-4 h-4 text-gold-400"></i> Centro Histórico, Cusco, Perú</li>
-                    <li class="flex items-center gap-2"><i data-lucide="clock" class="w-4 h-4 text-gold-400"></i> Lunes a Domingo - Atención 24 Horas</li>
-                </ul>
-            </div>
-
-            <div>
-                <h4 class="font-bold text-white uppercase tracking-wider mb-3">Aviso Legal</h4>
-                <p class="text-[11px] text-gray-500 leading-normal">
-                    Tomar bebidas alcohólicas en exceso es dañino. Prohibida la venta de bebidas alcohólicas a menores de 18 años. Licorería Pochita promueve el consumo responsable.
-                </p>
-            </div>
-        </div>
-
-        <div class="max-w-7xl mx-auto border-t border-white/5 pt-6 text-center text-xs text-gray-500">
-            © 2026 Licorería Pochita Cusco. Todos los derechos reservados.
-        </div>
-    </footer>
-
-    <!-- JAVASCRIPT APP LOGIC -->
+    <!-- SCRIPTS -->
     <script>
-        // Catalog Products Data (Solo Botellas de Licores)
-        const PRODUCTS = [
-            {
-                id: 'l1',
-                category: 'whisky',
-                name: 'Whisky Johnnie Walker Black Label 750ml',
-                desc: 'Whisky escocés 12 años añejado. Incluye bolsa de hielo en rocas.',
-                price: 115.00,
-                tag: '🔥 El Más Pedido',
-                badgeBg: 'bg-gold-500 text-night-900',
-                icon: '🥃'
-            },
-            {
-                id: 'l2',
-                category: 'whisky',
-                name: 'Whisky Johnnie Walker Red Label 750ml',
-                desc: 'Classic Blended Scotch Whisky. Incluye bolsa de hielo.',
-                price: 68.00,
-                tag: '⭐ Recomendado',
-                badgeBg: 'bg-amber-600 text-white',
-                icon: '🥃'
-            },
-            {
-                id: 'l3',
-                category: 'ron',
-                name: 'Ron Flor de Caña 7 Años 750ml',
-                desc: 'Ron Gran Reserva añejado naturalmente. Incluye Coca Cola 1.5L + Hielo.',
-                price: 75.00,
-                tag: '🍹 Promoción',
-                badgeBg: 'bg-neon-lime text-night-900',
-                icon: '🍾'
-            },
-            {
-                id: 'l4',
-                category: 'ron',
-                name: 'Ron Cartavio Solera 12 Años 750ml',
-                desc: 'Ron añejo peruano de sabor suave. Incluye Coca Cola 1.5L + Hielo.',
-                price: 65.00,
-                tag: '🇵🇪 Favorito',
-                badgeBg: 'bg-red-600 text-white',
-                icon: '🍾'
-            },
-            {
-                id: 'l5',
-                category: 'vodka',
-                name: 'Vodka Smirnoff Red 750ml',
-                desc: 'Vodka triple destilado. Incluye 2 Evervess o Sprite 1.5L + Hielo.',
-                price: 52.00,
-                tag: '🎉 Previas',
-                badgeBg: 'bg-neon-cyan text-night-900',
-                icon: '🍸'
-            },
-            {
-                id: 'l6',
-                category: 'vodka',
-                name: 'Tequila José Cuervo Reposado 750ml',
-                desc: 'Tequila mexicano auténtico. Incluye limones + sal fina + Hielo.',
-                price: 88.00,
-                tag: '🔥 Top Ventas',
-                badgeBg: 'bg-gold-500 text-night-900',
-                icon: '🌵'
-            },
-            {
-                id: 'l7',
-                category: 'pisco',
-                name: 'Pisco Santiago Queirolo Acholado 750ml',
-                desc: 'Pisco peruano de calidad. Incluye Evervess 1.5L + Limones + Hielo.',
-                price: 48.00,
-                tag: '🇵🇪 100% Peruano',
-                badgeBg: 'bg-purple-600 text-white',
-                icon: '🍾'
-            },
-            {
-                id: 'l8',
-                category: 'pisco',
-                name: 'Gin Tanqueray London Dry 750ml',
-                desc: 'Ginebra premium destilada. Incluye 2 Aguas Tónicas Schweppes + Hielo.',
-                price: 98.00,
-                tag: '👑 Premium',
-                badgeBg: 'bg-pink-600 text-white',
-                icon: '🍸'
-            }
-        ];
+        lucide.createIcons();
 
-        // State management
-        let cart = [
-            { ...PRODUCTS[0], quantity: 1 } // Default initial bottle
-        ];
+        // Iconos exactos de los vasos por cada categoría según tu imagen de referencia
+                   const categoryIcons = {
+            whisky: 'img/whisky.png',
+            ron: 'img/ron.png',
+            vodka: 'img/vodka.png',
+            tequila: 'img/tequila.png',
+            pisco: 'img/pisco.png',
+            gin: 'img/gin.png'
+        };
+        // TODO EL CATÁLOGO COMPLETO RESTAURADO Y CON LAS IMÁGENES DE LOS VASOS ASIGNADAS CORRECTAMENTE
+           const products = [
+            // 🍹 RON - CARTAVIO (PERÚ)
+            { id: 201, name: 'Cartavio Blanco / Silver', category: 'ron', country: 'peru', countryLabel: '🇵🇪 Perú', price: 28.00, brand: 'Cartavio', image: categoryIcons.ron },
+            { id: 202, name: 'Cartavio Superior / Black', category: 'ron', country: 'peru', countryLabel: '🇵🇪 Perú', price: 32.00, brand: 'Cartavio', image: categoryIcons.ron },
+            { id: 203, name: 'Cartavio Selecto 5 Años', category: 'ron', country: 'peru', countryLabel: '🇵🇪 Perú', price: 38.00, brand: 'Cartavio', image: categoryIcons.ron },
+            { id: 204, name: 'Cartavio Reserva 8 Años', category: 'ron', country: 'peru', countryLabel: '🇵🇪 Perú', price: 65.00, brand: 'Cartavio', image: categoryIcons.ron },
+            { id: 205, name: 'Cartavio Solera 12 Años', category: 'ron', country: 'peru', countryLabel: '🇵🇪 Perú', price: 95.00, brand: 'Cartavio', image: categoryIcons.ron },
+            { id: 206, name: 'Cartavio Gran Solera 15 Años', category: 'ron', country: 'peru', countryLabel: '🇵🇪 Perú', price: 135.00, brand: 'Cartavio', image: categoryIcons.ron },
+            { id: 207, name: 'Cartavio XO 18 Años', category: 'ron', country: 'peru', countryLabel: '🇵🇪 Perú', price: 185.00, brand: 'Cartavio', image: categoryIcons.ron },
+            { id: 208, name: 'Cartavio Signature', category: 'ron', country: 'peru', countryLabel: '🇵🇪 Perú', price: 290.00, brand: 'Cartavio', image: categoryIcons.ron },
 
-        // Render Catalog Products
-        function renderProducts(category = 'todos') {
+            // 🍹 RON - ZACAPA (GUATEMALA)
+            { id: 209, name: 'Zacapa Centenario 23', category: 'ron', country: 'guatemala', countryLabel: '🇬🇹 Guatemala', price: 250.00, brand: 'Ron Zacapa', image: categoryIcons.ron },
+            { id: 210, name: 'Zacapa Edición Negra', category: 'ron', country: 'guatemala', countryLabel: '🇬🇹 Guatemala', price: 280.00, brand: 'Ron Zacapa', image: categoryIcons.ron },
+            { id: 211, name: 'Zacapa XO', category: 'ron', country: 'guatemala', countryLabel: '🇬🇹 Guatemala', price: 450.00, brand: 'Ron Zacapa', image: categoryIcons.ron },
+            { id: 212, name: 'Zacapa Royal', category: 'ron', country: 'guatemala', countryLabel: '🇬🇹 Guatemala', price: 1100.00, brand: 'Ron Zacapa', image: categoryIcons.ron },
+
+            // 🍹 RON - FLOR DE CAÑA (NICARAGUA)
+            { id: 213, name: 'Flor de Caña 4 Años', category: 'ron', country: 'nicaragua', countryLabel: '🇳🇮 Nicaragua', price: 45.00, brand: 'Flor de Caña', image: categoryIcons.ron },
+            { id: 214, name: 'Flor de Caña 5 Años', category: 'ron', country: 'nicaragua', countryLabel: '🇳🇮 Nicaragua', price: 55.00, brand: 'Flor de Caña', image: categoryIcons.ron },
+            { id: 215, name: 'Flor de Caña 7 Años Gran Reserva', category: 'ron', country: 'nicaragua', countryLabel: '🇳🇮 Nicaragua', price: 85.00, brand: 'Flor de Caña', image: categoryIcons.ron },
+            { id: 216, name: 'Flor de Caña Centenario 12 Años', category: 'ron', country: 'nicaragua', countryLabel: '🇳🇮 Nicaragua', price: 130.00, brand: 'Flor de Caña', image: categoryIcons.ron },
+            { id: 217, name: 'Flor de Caña Centenario 18 Años', category: 'ron', country: 'nicaragua', countryLabel: '🇳🇮 Nicaragua', price: 210.00, brand: 'Flor de Caña', image: categoryIcons.ron },
+            { id: 218, name: 'Flor de Caña Centenario 25 Años', category: 'ron', country: 'nicaragua', countryLabel: '🇳🇮 Nicaragua', price: 480.00, brand: 'Flor de Caña', image: categoryIcons.ron },
+
+            // 🍹 RON - DIPLOMÁTICO (VENEZUELA)
+            { id: 219, name: 'Diplomático Planas', category: 'ron', country: 'venezuela', countryLabel: '🇻🇪 Venezuela', price: 95.00, brand: 'Diplomático', image: categoryIcons.ron },
+            { id: 220, name: 'Diplomático Mantuano', category: 'ron', country: 'venezuela', countryLabel: '🇻🇪 Venezuela', price: 110.00, brand: 'Diplomático', image: categoryIcons.ron },
+            { id: 221, name: 'Diplomático Reserva Exclusiva', category: 'ron', country: 'venezuela', countryLabel: '🇻🇪 Venezuela', price: 165.00, brand: 'Diplomático', image: categoryIcons.ron },
+            { id: 222, name: 'Diplomático Selección de Familia', category: 'ron', country: 'venezuela', countryLabel: '🇻🇪 Venezuela', price: 220.00, brand: 'Diplomático', image: categoryIcons.ron },
+            { id: 223, name: 'Diplomático Single Vintage', category: 'ron', country: 'venezuela', countryLabel: '🇻🇪 Venezuela', price: 550.00, brand: 'Diplomático', image: categoryIcons.ron },
+            { id: 224, name: 'Diplomático Ambassador', category: 'ron', country: 'venezuela', countryLabel: '🇻🇪 Venezuela', price: 980.00, brand: 'Diplomático', image: categoryIcons.ron },
+
+            // 🍹 RON - BACARDÍ (PUERTO RICO)
+            { id: 225, name: 'Bacardí Carta Blanca', category: 'ron', country: 'puertorico', countryLabel: '🇵🇷 Puerto Rico', price: 45.00, brand: 'Bacardí', image: categoryIcons.ron },
+            { id: 226, name: 'Bacardí Carta de Oro', category: 'ron', country: 'puertorico', countryLabel: '🇵🇷 Puerto Rico', price: 48.00, brand: 'Bacardí', image: categoryIcons.ron },
+            { id: 227, name: 'Bacardí Añejo Cuatro (4 Años)', category: 'ron', country: 'puertorico', countryLabel: '🇵🇷 Puerto Rico', price: 65.00, brand: 'Bacardí', image: categoryIcons.ron },
+            { id: 228, name: 'Bacardí Reserva Ocho (8 Años)', category: 'ron', country: 'puertorico', countryLabel: '🇵🇷 Puerto Rico', price: 115.00, brand: 'Bacardí', image: categoryIcons.ron },
+            { id: 229, name: 'Bacardí Gran Reserva Diez (10 Años)', category: 'ron', country: 'puertorico', countryLabel: '🇵🇷 Puerto Rico', price: 155.00, brand: 'Bacardí', image: categoryIcons.ron },
+            { id: 230, name: 'Bacardí Sabores (Limón/Raspberry)', category: 'ron', country: 'puertorico', countryLabel: '🇵🇷 Puerto Rico', price: 48.00, brand: 'Bacardí', image: categoryIcons.ron },
+
+            // 🍹 RON - BARCELÓ (REPÚBLICA DOMINICANA)
+            { id: 231, name: 'Barceló Blanco / Dorado', category: 'ron', country: 'repdominicana', countryLabel: '🇩🇴 Rep. Dominicana', price: 42.00, brand: 'Barceló', image: categoryIcons.ron },
+            { id: 232, name: 'Barceló Añejo', category: 'ron', country: 'repdominicana', countryLabel: '🇩🇴 Rep. Dominicana', price: 52.00, brand: 'Barceló', image: categoryIcons.ron },
+            { id: 233, name: 'Barceló Gran Añejo', category: 'ron', country: 'repdominicana', countryLabel: '🇩🇴 Rep. Dominicana', price: 72.00, brand: 'Barceló', image: categoryIcons.ron },
+            { id: 234, name: 'Barceló Organic', category: 'ron', country: 'repdominicana', countryLabel: '🇩🇴 Rep. Dominicana', price: 95.00, brand: 'Barceló', image: categoryIcons.ron },
+            { id: 235, name: 'Barceló Imperial', category: 'ron', country: 'repdominicana', countryLabel: '🇩🇴 Rep. Dominicana', price: 125.00, brand: 'Barceló', image: categoryIcons.ron },
+            { id: 236, name: 'Barceló Imperial Onyx', category: 'ron', country: 'repdominicana', countryLabel: '🇩🇴 Rep. Dominicana', price: 190.00, brand: 'Barceló', image: categoryIcons.ron },
+            { id: 237, name: 'Barceló Imperial Rare Casks', category: 'ron', country: 'repdominicana', countryLabel: '🇩🇴 Rep. Dominicana', price: 280.00, brand: 'Barceló', image: categoryIcons.ron },
+            { id: 238, name: 'Barceló Imperial Premium Blend', category: 'ron', country: 'repdominicana', countryLabel: '🇩🇴 Rep. Dominicana', price: 650.00, brand: 'Barceló', image: categoryIcons.ron },
+
+            // 🍹 RON - HAVANA CLUB (CUBA)
+            { id: 239, name: 'Havana Club Añejo 3 Años', category: 'ron', country: 'cuba', countryLabel: '🇨🇺 Cuba', price: 48.00, brand: 'Havana Club', image: categoryIcons.ron },
+            { id: 240, name: 'Havana Club Añejo Especial', category: 'ron', country: 'cuba', countryLabel: '🇨🇺 Cuba', price: 58.00, brand: 'Havana Club', image: categoryIcons.ron },
+            { id: 241, name: 'Havana Club Añejo Reserva', category: 'ron', country: 'cuba', countryLabel: '🇨🇺 Cuba', price: 68.00, brand: 'Havana Club', image: categoryIcons.ron },
+            { id: 242, name: 'Havana Club Añejo 7 Años', category: 'ron', country: 'cuba', countryLabel: '🇨🇺 Cuba', price: 78.00, brand: 'Havana Club', image: categoryIcons.ron },
+            { id: 243, name: 'Havana Club Selección de Maestros', category: 'ron', country: 'cuba', countryLabel: '🇨🇺 Cuba', price: 220.00, brand: 'Havana Club', image: categoryIcons.ron },
+            { id: 244, name: 'Havana Club Gran Reserva 15 Años', category: 'ron', country: 'cuba', countryLabel: '🇨🇺 Cuba', price: 520.00, brand: 'Havana Club', image: categoryIcons.ron },
+            { id: 245, name: 'Havana Club Pacto Navío', category: 'ron', country: 'cuba', countryLabel: '🇨🇺 Cuba', price: 290.00, brand: 'Havana Club', image: categoryIcons.ron },
+
+            // 🥃 WHISKY - ESCOCIA (Escocesa: Blended & Single Malt)
+            // Johnnie Walker
+            { id: 101, name: 'Johnnie Walker Red Label', category: 'whisky', country: 'escocia', countryLabel: '🏴󠁧󠁢󠁳󠁣󠁴󠁿 Escocia', price: 58.00, brand: 'Johnnie Walker', image: categoryIcons.whisky },
+            { id: 102, name: 'Johnnie Walker Black Label 12 Años', category: 'whisky', country: 'escocia', countryLabel: '🏴󠁧󠁢󠁳󠁣󠁴󠁿 Escocia', price: 115.00, brand: 'Johnnie Walker', image: categoryIcons.whisky },
+            { id: 103, name: 'Johnnie Walker Double Black', category: 'whisky', country: 'escocia', countryLabel: '🏴󠁧󠁢󠁳󠁣󠁴󠁿 Escocia', price: 145.00, brand: 'Johnnie Walker', image: categoryIcons.whisky },
+            { id: 104, name: 'Johnnie Walker Green Label 15 Años', category: 'whisky', country: 'escocia', countryLabel: '🏴󠁧󠁢󠁳󠁣󠁴󠁿 Escocia', price: 260.00, brand: 'Johnnie Walker', image: categoryIcons.whisky },
+            { id: 105, name: 'Johnnie Walker Gold Label Reserve', category: 'whisky', country: 'escocia', countryLabel: '🏴󠁧󠁢󠁳󠁣󠁴󠁿 Escocia', price: 210.00, brand: 'Johnnie Walker', image: categoryIcons.whisky },
+            { id: 106, name: 'Johnnie Walker Aged 18 Years', category: 'whisky', country: 'escocia', countryLabel: '🏴󠁧󠁢󠁳󠁣󠁴󠁿 Escocia', price: 380.00, brand: 'Johnnie Walker', image: categoryIcons.whisky },
+            { id: 107, name: 'Johnnie Walker Blue Label', category: 'whisky', country: 'escocia', countryLabel: '🏴󠁧󠁢󠁳󠁣󠁴󠁿 Escocia', price: 1050.00, brand: 'Johnnie Walker', image: categoryIcons.whisky },
+
+            // Chivas Regal
+            { id: 108, name: 'Chivas Regal 12 Años', category: 'whisky', country: 'escocia', countryLabel: '🏴󠁧󠁢󠁳󠁣󠁴󠁿 Escocia', price: 105.00, brand: 'Chivas Regal', image: categoryIcons.whisky },
+            { id: 109, name: 'Chivas Regal Extra 13', category: 'whisky', country: 'escocia', countryLabel: '🏴󠁧󠁢󠁳󠁣󠁴󠁿 Escocia', price: 130.00, brand: 'Chivas Regal', image: categoryIcons.whisky },
+            { id: 110, name: 'Chivas Regal XV (15 Años)', category: 'whisky', country: 'escocia', countryLabel: '🏴󠁧󠁢󠁳󠁣󠁴󠁿 Escocia', price: 185.00, brand: 'Chivas Regal', image: categoryIcons.whisky },
+            { id: 111, name: 'Chivas Regal 18 Años', category: 'whisky', country: 'escocia', countryLabel: '🏴󠁧󠁢󠁳󠁣󠁴󠁿 Escocia', price: 320.00, brand: 'Chivas Regal', image: categoryIcons.whisky },
+            { id: 112, name: 'Chivas Regal 25 Años', category: 'whisky', country: 'escocia', countryLabel: '🏴󠁧󠁢󠁳󠁣󠁴󠁿 Escocia', price: 1400.00, brand: 'Chivas Regal', image: categoryIcons.whisky },
+
+            // Ballantine's
+            { id: 113, name: "Ballantine's Finest", category: 'whisky', country: 'escocia', countryLabel: '🏴󠁧󠁢󠁳󠁣󠁴󠁿 Escocia', price: 48.00, brand: "Ballantine's", image: categoryIcons.whisky },
+            { id: 114, name: "Ballantine's 7 Bourbon Finish", category: 'whisky', country: 'escocia', countryLabel: '🏴󠁧󠁢󠁳󠁣󠁴󠁿 Escocia', price: 65.00, brand: "Ballantine's", image: categoryIcons.whisky },
+            { id: 115, name: "Ballantine's 12 Años", category: 'whisky', country: 'escocia', countryLabel: '🏴󠁧󠁢󠁳󠁣󠁴󠁿 Escocia', price: 95.00, brand: "Ballantine's", image: categoryIcons.whisky },
+            { id: 116, name: "Ballantine's 17 Años", category: 'whisky', country: 'escocia', countryLabel: '🏴󠁧󠁢󠁳󠁣󠁴󠁿 Escocia', price: 280.00, brand: "Ballantine's", image: categoryIcons.whisky },
+
+            // Buchanan's
+            { id: 117, name: "Buchanan's DeLuxe 12 Años", category: 'whisky', country: 'escocia', countryLabel: '🏴󠁧󠁢󠁳󠁣󠁴󠁿 Escocia', price: 125.00, brand: "Buchanan's", image: categoryIcons.whisky },
+            { id: 118, name: "Buchanan's Master", category: 'whisky', country: 'escocia', countryLabel: '🏴󠁧󠁢󠁳󠁣󠁴󠁿 Escocia', price: 160.00, brand: "Buchanan's", image: categoryIcons.whisky },
+            { id: 119, name: "Buchanan's Special Reserve 18 Años", category: 'whisky', country: 'escocia', countryLabel: '🏴󠁧󠁢󠁳󠁣󠁴󠁿 Escocia', price: 340.00, brand: "Buchanan's", image: categoryIcons.whisky },
+
+            // The Macallan
+            { id: 120, name: 'The Macallan Double Cask 12 Años', category: 'whisky', country: 'escocia', countryLabel: '🏴󠁧󠁢󠁳󠁣󠁴󠁿 Escocia', price: 380.00, brand: 'The Macallan', image: categoryIcons.whisky },
+            { id: 121, name: 'The Macallan Sherry Oak 12 Años', category: 'whisky', country: 'escocia', countryLabel: '🏴󠁧󠁢󠁳󠁣󠁴󠁿 Escocia', price: 420.00, brand: 'The Macallan', image: categoryIcons.whisky },
+            { id: 122, name: 'The Macallan Sherry Oak 15 Años', category: 'whisky', country: 'escocia', countryLabel: '🏴󠁧󠁢󠁳󠁣󠁴󠁿 Escocia', price: 750.00, brand: 'The Macallan', image: categoryIcons.whisky },
+            { id: 123, name: 'The Macallan Sherry Oak 18 Años', category: 'whisky', country: 'escocia', countryLabel: '🏴󠁧󠁢󠁳󠁣󠁴󠁿 Escocia', price: 1850.00, brand: 'The Macallan', image: categoryIcons.whisky },
+
+            // Glenfiddich
+            { id: 124, name: 'Glenfiddich 12 Años Our Original', category: 'whisky', country: 'escocia', countryLabel: '🏴󠁧󠁢󠁳󠁣󠁴󠁿 Escocia', price: 195.00, brand: 'Glenfiddich', image: categoryIcons.whisky },
+            { id: 125, name: 'Glenfiddich 15 Años Solera', category: 'whisky', country: 'escocia', countryLabel: '🏴󠁧󠁢󠁳󠁣󠁴󠁿 Escocia', price: 290.00, brand: 'Glenfiddich', image: categoryIcons.whisky },
+            { id: 126, name: 'Glenfiddich 18 Años Small Batch', category: 'whisky', country: 'escocia', countryLabel: '🏴󠁧󠁢󠁳󠁣󠁴󠁿 Escocia', price: 480.00, brand: 'Glenfiddich', image: categoryIcons.whisky },
+
+
+            // 🥃 WHISKY - USA (Americana: Bourbon & Tennessee)
+            // Jack Daniel's
+            { id: 201, name: "Jack Daniel's Old No. 7", category: 'whisky', country: 'usa', countryLabel: '🇺🇸 EE.UU.', price: 85.00, brand: "Jack Daniel's", image: categoryIcons.whisky },
+            { id: 202, name: "Jack Daniel's Gentleman Jack", category: 'whisky', country: 'usa', countryLabel: '🇺🇸 EE.UU.', price: 125.00, brand: "Jack Daniel's", image: categoryIcons.whisky },
+            { id: 203, name: "Jack Daniel's Single Barrel Select", category: 'whisky', country: 'usa', countryLabel: '🇺🇸 EE.UU.', price: 220.00, brand: "Jack Daniel's", image: categoryIcons.whisky },
+            { id: 204, name: "Jack Daniel's Tennessee Straight Rye", category: 'whisky', country: 'usa', countryLabel: '🇺🇸 EE.UU.', price: 110.00, brand: "Jack Daniel's", image: categoryIcons.whisky },
+            { id: 205, name: "Jack Daniel's Tennessee Honey", category: 'whisky', country: 'usa', countryLabel: '🇺🇸 EE.UU.', price: 88.00, brand: "Jack Daniel's", image: categoryIcons.whisky },
+            { id: 206, name: "Jack Daniel's Tennessee Fire", category: 'whisky', country: 'usa', countryLabel: '🇺🇸 EE.UU.', price: 88.00, brand: "Jack Daniel's", image: categoryIcons.whisky },
+            { id: 207, name: "Jack Daniel's Tennessee Apple", category: 'whisky', country: 'usa', countryLabel: '🇺🇸 EE.UU.', price: 88.00, brand: "Jack Daniel's", image: categoryIcons.whisky },
+
+            // Jim Beam
+            { id: 208, name: 'Jim Beam White Label', category: 'whisky', country: 'usa', countryLabel: '🇺🇸 EE.UU.', price: 62.00, brand: 'Jim Beam', image: categoryIcons.whisky },
+            { id: 209, name: 'Jim Beam Black Extra-Aged', category: 'whisky', country: 'usa', countryLabel: '🇺🇸 EE.UU.', price: 92.00, brand: 'Jim Beam', image: categoryIcons.whisky },
+            { id: 210, name: 'Jim Beam Honey / Apple', category: 'whisky', country: 'usa', countryLabel: '🇺🇸 EE.UU.', price: 68.00, brand: 'Jim Beam', image: categoryIcons.whisky },
+
+            // Maker's Mark
+            { id: 211, name: "Maker's Mark Original", category: 'whisky', country: 'usa', countryLabel: '🇺🇸 EE.UU.', price: 135.00, brand: "Maker's Mark", image: categoryIcons.whisky },
+            { id: 212, name: "Maker's 46", category: 'whisky', country: 'usa', countryLabel: '🇺🇸 EE.UU.', price: 175.00, brand: "Maker's Mark", image: categoryIcons.whisky },
+
+
+            // 🥃 WHISKY - IRLANDA (Irlandesa: Irish Blended & Single Malt)
+            // Jameson
+            { id: 301, name: 'Jameson Irish Whiskey Original', category: 'whisky', country: 'irlanda', countryLabel: '🇮🇪 Irlanda', price: 72.00, brand: 'Jameson', image: categoryIcons.whisky },
+            { id: 302, name: 'Jameson Black Barrel', category: 'whisky', country: 'irlanda', countryLabel: '🇮🇪 Irlanda', price: 115.00, brand: 'Jameson', image: categoryIcons.whisky },
+            { id: 303, name: 'Jameson Caskmates Stout / IPA', category: 'whisky', country: 'irlanda', countryLabel: '🇮🇪 Irlanda', price: 88.00, brand: 'Jameson', image: categoryIcons.whisky },
+            { id: 304, name: 'Jameson Cold Brew', category: 'whisky', country: 'irlanda', countryLabel: '🇮🇪 Irlanda', price: 92.00, brand: 'Jameson', image: categoryIcons.whisky },
+
+
+            // 🥃 WHISKY - JAPÓN (Japonesa: Premium Artistry)
+            // Suntory & Nikka
+            { id: 401, name: "Yamazaki Distiller's Reserve", category: 'whisky', country: 'japon', countryLabel: '🇯🇵 Japón', price: 650.00, brand: 'Suntory', image: categoryIcons.whisky },
+            { id: 402, name: 'Yamazaki 12 Años Single Malt', category: 'whisky', country: 'japon', countryLabel: '🇯🇵 Japón', price: 1200.00, brand: 'Suntory', image: categoryIcons.whisky },
+            { id: 403, name: 'Yamazaki 18 Años Single Malt', category: 'whisky', country: 'japon', countryLabel: '🇯🇵 Japón', price: 2800.00, brand: 'Suntory', image: categoryIcons.whisky },
+            { id: 404, name: 'Hakushu Distiller\'s Reserve', category: 'whisky', country: 'japon', countryLabel: '🇯🇵 Japón', price: 620.00, brand: 'Suntory', image: categoryIcons.whisky },
+            { id: 405, name: 'Hibiki Japanese Harmony', category: 'whisky', country: 'japon', countryLabel: '🇯🇵 Japón', price: 580.00, brand: 'Suntory', image: categoryIcons.whisky },
+            { id: 406, name: 'Nikka From The Barrel', category: 'whisky', country: 'japon', countryLabel: '🇯🇵 Japón', price: 380.00, brand: 'Nikka', image: categoryIcons.whisky },
+            { id: 407, name: 'Yoichi Single Malt', category: 'whisky', country: 'japon', countryLabel: '🇯🇵 Japón', price: 690.00, brand: 'Nikka', image: categoryIcons.whisky },
+
+            // 🍸 VODKA
+            { id: 301, name: 'Grey Goose Original', category: 'vodka', country: 'francia', countryLabel: '🇫🇷 Francia', price: 165.00, brand: 'Grey Goose', image: categoryIcons.vodka },
+            { id: 302, name: 'Cîroc', category: 'vodka', country: 'francia', countryLabel: '🇫🇷 Francia', price: 155.00, brand: 'Cîroc', image: categoryIcons.vodka },
+            { id: 303, name: 'Belvedere Vodka', category: 'vodka', country: 'polonia', countryLabel: '🇵🇱 Polonia', price: 175.00, brand: 'Belvedere', image: categoryIcons.vodka },
+            { id: 304, name: 'Absolut Vodka Original', category: 'vodka', country: 'suecia', countryLabel: '🇸🇪 Suecia', price: 58.00, brand: 'Absolut', image: categoryIcons.vodka },
+            { id: 305, name: '14 Inkas Vodka', category: 'vodka', country: 'peru', countryLabel: '🇵🇪 Perú', price: 85.00, brand: '14 Inkas', image: categoryIcons.vodka },
+            { id: 306, name: 'Skyy Vodka', category: 'vodka', country: 'usa', countryLabel: '🇺🇸 EE.UU.', price: 52.00, brand: 'Skyy', image: categoryIcons.vodka },
+            { id: 307, name: 'Finlandia Vodka', category: 'vodka', country: 'finlandia', countryLabel: '🇫🇮 Finlandia', price: 55.00, brand: 'Finlandia', image: categoryIcons.vodka },
+            { id: 308, name: 'Smirnoff No. 21 Red', category: 'vodka', country: 'rusia', countryLabel: '🇷🇺 Rusia', price: 45.00, brand: 'Smirnoff', image: categoryIcons.vodka },
+            { id: 309, name: 'Stolichnaya (Stoli)', category: 'vodka', country: 'letonia', countryLabel: '🌐 Letonia / Rusia', price: 65.00, brand: 'Stolichnaya', image: categoryIcons.vodka },
+            { id: 310, name: 'Beluga Noble', category: 'vodka', country: 'montenegro', countryLabel: '🌐 Rusia / Montenegro', price: 195.00, brand: 'Beluga', image: categoryIcons.vodka },
+        
+            // 🌵 TEQUILA
+        { id: 401, name: 'José Cuervo Especial (Blanco / Reposado)', category: 'tequila', country: 'mexico', countryLabel: '🇲🇽 México', price: 55.00, brand: 'José Cuervo', image: categoryIcons.tequila },
+        { id: 402, name: 'José Cuervo Tradicional', category: 'tequila', country: 'mexico', countryLabel: '🇲🇽 México', price: 85.00, brand: 'José Cuervo', image: categoryIcons.tequila },
+        { id: 403, name: 'José Cuervo Reserva de la Familia', category: 'tequila', country: 'mexico', countryLabel: '🇲🇽 México', price: 450.00, brand: 'José Cuervo', image: categoryIcons.tequila },
+        { id: 404, name: '1800 Tequila (Blanco / Reposado / Añejo)', category: 'tequila', country: 'mexico', countryLabel: '🇲🇽 México', price: 120.00, brand: '1800 Tequila', image: categoryIcons.tequila },
+        { id: 405, name: 'Don Julio (Blanco / Reposado / Añejo)', category: 'tequila', country: 'reino_unido', countryLabel: '🇬🇧 Reino Unido (Diageo)', price: 165.00, brand: 'Don Julio', image: categoryIcons.tequila },
+        { id: 406, name: 'Don Julio 1942', category: 'tequila', country: 'reino_unido', countryLabel: '🇬🇧 Reino Unido (Diageo)', price: 650.00, brand: 'Don Julio', image: categoryIcons.tequila },
+        { id: 407, name: 'Herradura (Blanco / Reposado / Añejo)', category: 'tequila', country: 'usa', countryLabel: '🇺🇸 EE.UU. (Brown-Forman)', price: 135.00, brand: 'Herradura', image: categoryIcons.tequila },
+        { id: 408, name: 'El Jimador (Blanco / Reposado)', category: 'tequila', country: 'usa', countryLabel: '🇺🇸 EE.UU. (Brown-Forman)', price: 65.00, brand: 'El Jimador', image: categoryIcons.tequila },
+        { id: 409, name: 'Patrón (Blanco / Reposado / Añejo)', category: 'tequila', country: 'suiza', countryLabel: '🇨🇭 Suiza / Bermudas (Bacardí)', price: 180.00, brand: 'Patrón', image: categoryIcons.tequila },
+        
+        // 🇵🇪🇨🇱 PISCO
+        // --- PERÚ ---
+        { id: 501, name: 'Santiago Queirolo Línea Clásica', category: 'pisco', country: 'peru', countryLabel: '🇵🇪 Perú', price: 42.00, brand: 'Santiago Queirolo', image: categoryIcons.pisco },
+        { id: 502, name: 'Santiago Queirolo Selección Especial', category: 'pisco', country: 'peru', countryLabel: '🇵🇪 Perú', price: 55.00, brand: 'Santiago Queirolo', image: categoryIcons.pisco },
+        { id: 503, name: 'Santiago Queirolo Reserva de la Familia', category: 'pisco', country: 'peru', countryLabel: '🇵🇪 Perú', price: 85.00, brand: 'Santiago Queirolo', image: categoryIcons.pisco },
+        { id: 504, name: 'Tabernero La Botija', category: 'pisco', country: 'peru', countryLabel: '🇵🇪 Perú', price: 35.00, brand: 'Tabernero', image: categoryIcons.pisco },
+        { id: 505, name: 'Tabernero Edición Limitada / Premium', category: 'pisco', country: 'peru', countryLabel: '🇵🇪 Perú', price: 52.00, brand: 'Tabernero', image: categoryIcons.pisco },
+        { id: 506, name: 'Tabernero Colección Privada Mosto Verde', category: 'pisco', country: 'peru', countryLabel: '🇵🇪 Perú', price: 78.00, brand: 'Tabernero', image: categoryIcons.pisco },
+        { id: 507, name: 'Pisco Portón Mosto Verde Tradicional', category: 'pisco', country: 'peru', countryLabel: '🇵🇪 Perú', price: 125.00, brand: 'Portón', image: categoryIcons.pisco },
+        { id: 508, name: 'La Caravedo (Pisco Portón)', category: 'pisco', country: 'peru', countryLabel: '🇵🇪 Perú', price: 65.00, brand: 'Portón', image: categoryIcons.pisco },
+        { id: 509, name: 'Pisco Vargas Reserva Privada', category: 'pisco', country: 'peru', countryLabel: '🇵🇪 Perú', price: 32.00, brand: 'Vargas', image: categoryIcons.pisco },
+        { id: 510, name: 'Cuatro Gallos Línea Estándar', category: 'pisco', country: 'peru', countryLabel: '🇵🇪 Perú', price: 48.00, brand: 'Cuatro Gallos', image: categoryIcons.pisco },
+        { id: 511, name: 'Cuatro Gallos Mosto Verde / Colección', category: 'pisco', country: 'peru', countryLabel: '🇵🇪 Perú', price: 95.00, brand: 'Cuatro Gallos', image: categoryIcons.pisco },
+
+        // --- CHILE ---
+        { id: 512, name: 'Capel Tradicional (35° / 40°)', category: 'pisco', country: 'chile', countryLabel: '🇨🇱 Chile', price: 38.00, brand: 'Capel', image: categoryIcons.pisco },
+        { id: 513, name: 'Capel Doble Destilado 40°', category: 'pisco', country: 'chile', countryLabel: '🇨🇱 Chile', price: 45.00, brand: 'Capel', image: categoryIcons.pisco },
+        { id: 514, name: 'Capel Líneas Listas (Pisco Sour / Frutales)', category: 'pisco', country: 'chile', countryLabel: '🇨🇱 Chile', price: 35.00, brand: 'Capel', image: categoryIcons.pisco },
+        { id: 515, name: 'Alto del Carmen Especial 35°', category: 'pisco', country: 'chile', countryLabel: '🇨🇱 Chile', price: 42.00, brand: 'Alto del Carmen', image: categoryIcons.pisco },
+        { id: 516, name: 'Alto del Carmen Reservado 40°', category: 'pisco', country: 'chile', countryLabel: '🇨🇱 Chile', price: 52.00, brand: 'Alto del Carmen', image: categoryIcons.pisco },
+        { id: 517, name: 'Alto del Carmen Transparente (The Essence)', category: 'pisco', country: 'chile', countryLabel: '🇨🇱 Chile', price: 58.00, brand: 'Alto del Carmen', image: categoryIcons.pisco },
+        { id: 518, name: 'Mistral (35° / 40°)', category: 'pisco', country: 'chile', countryLabel: '🇨🇱 Chile', price: 46.00, brand: 'Mistral', image: categoryIcons.pisco },
+        { id: 519, name: 'Mistral Nobel / Gran Reserva 46°', category: 'pisco', country: 'chile', countryLabel: '🇨🇱 Chile', price: 82.00, brand: 'Mistral', image: categoryIcons.pisco },
+
+        // 🍸 GIN
+        { id: 601, name: 'Tanqueray London Dry', category: 'gin', country: 'reino_unido', countryLabel: '🇬🇧 Reino Unido', price: 75.00, brand: 'Tanqueray', image: categoryIcons.gin },
+        { id: 602, name: 'Beefeater London Dry', category: 'gin', country: 'reino_unido', countryLabel: '🇬🇧 Reino Unido', price: 65.00, brand: 'Beefeater', image: categoryIcons.gin },
+        { id: 603, name: 'Bombay Sapphire', category: 'gin', country: 'reino_unido', countryLabel: '🇬🇧 Reino Unido', price: 85.00, brand: 'Bombay Sapphire', image: categoryIcons.gin },
+        { id: 604, name: 'Hendrick\'s Gin', category: 'gin', country: 'reino_unido', countryLabel: '🇬🇧 Escocia (R.U.)', price: 135.00, brand: 'Hendrick\'s', image: categoryIcons.gin },
+        { id: 605, name: 'Ginka Gin Artesanal', category: 'gin', country: 'peru', countryLabel: '🇵🇪 Perú', price: 70.00, brand: 'Ginka', image: categoryIcons.gin },
+        { id: 606, name: 'Amazonian Gin Company', category: 'gin', country: 'peru', countryLabel: '🇵🇪 Perú', price: 95.00, brand: 'Amazonian Gin', image: categoryIcons.gin },
+        { id: 607, name: 'Andean Gin', category: 'gin', country: 'peru', countryLabel: '🇵🇪 Perú', price: 85.00, brand: 'Don Michael', image: categoryIcons.gin },
+        { id: 608, name: 'Monkey 47 Schwarzwald Dry', category: 'gin', country: 'alemania', countryLabel: '🇩🇪 Alemania', price: 220.00, brand: 'Monkey 47', image: categoryIcons.gin },
+        { id: 609, name: 'Nordés Atlantic Galician Gin', category: 'gin', country: 'espana', countryLabel: '🇪🇸 España', price: 110.00, brand: 'Nordés', image: categoryIcons.gin },
+        ];
+    
+
+        let cart = [];
+        let currentCategory = 'todos';
+        let currentCountry = 'todos';
+
+        function renderProducts() {
             const grid = document.getElementById('productsGrid');
+            if (!grid) return;
             grid.innerHTML = '';
 
-            const filtered = category === 'todos' 
-                ? PRODUCTS 
-                : PRODUCTS.filter(p => p.category === category);
+            let filtered = products;
 
-            filtered.forEach(product => {
+            if (currentCategory !== 'todos') {
+                filtered = filtered.filter(p => p.category === currentCategory);
+            }
+
+            if (currentCountry !== 'todos') {
+                filtered = filtered.filter(p => p.country === currentCountry);
+            }
+
+            if (filtered.length === 0) {
+                grid.innerHTML = `<p class="col-span-full text-center text-gray-400 py-10">No hay licores disponibles para este filtro.</p>`;
+                return;
+            }
+
+            filtered.forEach(p => {
+                const iconUrl = categoryIcons[p.category.toLowerCase()] || p.image;
+
                 const card = document.createElement('div');
-                card.className = 'glass-card p-5 rounded-2xl border border-white/10 flex flex-col justify-between glass-card-hover relative group';
+                card.onclick = () => addToCart(p.id, card);
+                card.className = 'glass-card rounded-2xl p-5 border border-white/10 hover:border-gold-500/50 cursor-pointer transition-all duration-300 flex flex-col justify-between group';
+
                 card.innerHTML = `
                     <div>
-                        <div class="flex justify-between items-start mb-4">
-                            <span class="text-3xl">${product.icon}</span>
-                            <span class="text-[10px] font-extrabold uppercase px-2.5 py-1 rounded-full ${product.badgeBg}">
-                                ${product.tag}
+                        <div class="flex items-center justify-between mb-3">
+                            <div class="h-16 w-16 flex items-center justify-center bg-night-800/50 rounded-xl p-1 border border-white/5">
+                                <img src="${iconUrl}" alt="${p.name}" 
+                                     class="h-14 w-auto object-contain drop-shadow-md group-hover:scale-110 transition-transform">
+                            </div>
+                            <span class="text-[10px] font-bold uppercase tracking-wider bg-gold-500/20 text-gold-400 px-2.5 py-1 rounded-full border border-gold-500/30">
+                                ${p.countryLabel}
                             </span>
                         </div>
-                        <h3 class="font-heading font-bold text-lg text-white mb-1">${product.name}</h3>
-                        <p class="text-gray-400 text-xs leading-relaxed mb-4">${product.desc}</p>
+                        <h3 class="font-heading font-bold text-base text-white group-hover:text-gold-400 transition-colors mb-1">${p.name}</h3>
+                        <p class="text-xs text-gray-400 leading-relaxed">${p.brand}</p>
                     </div>
-
-                    <div class="pt-4 border-t border-white/10 flex items-center justify-between mt-2">
+                    <div class="flex items-center justify-between pt-3 border-t border-white/10 mt-4">
                         <div>
-                            <span class="text-[10px] text-gray-400 block">Precio:</span>
-                            <span class="font-heading font-black text-xl text-gold-400">S/ ${product.price.toFixed(2)}</span>
+                            <span class="text-[10px] text-gray-400 block uppercase">Precio Ref.</span>
+                            <span class="text-lg font-heading font-black text-white">S/ ${p.price.toFixed(2)}</span>
                         </div>
-                        <button onclick="addToCart('${product.id}')" class="gold-btn px-4 py-2 rounded-xl text-night-900 font-bold text-xs flex items-center gap-1">
-                            <i data-lucide="plus" class="w-4 h-4"></i> Añadir
+                        <button class="p-2.5 rounded-xl bg-gold-500 text-night-900 font-bold group-hover:bg-gold-400 transition-all flex items-center gap-1.5 shadow-lg">
+                            <i data-lucide="plus" class="w-4 h-4"></i>
+                            <span class="text-xs">Agregar</span>
                         </button>
                     </div>
                 `;
                 grid.appendChild(card);
             });
-
-            lucide.createIcons();
+            if (window.lucide) lucide.createIcons();
         }
 
-        // Filter Category Handler
-        function filterCategory(cat) {
+function filterCategory(cat) {
+            currentCategory = cat;
+            currentCountry = 'todos';
+
             document.querySelectorAll('.cat-btn').forEach(btn => {
-                btn.classList.remove('bg-gold-500', 'text-night-900');
+                btn.classList.remove('bg-gold-500', 'text-night-900', 'active');
                 btn.classList.add('bg-night-700', 'text-gray-300');
             });
-            event.target.classList.remove('bg-night-700', 'text-gray-300');
-            event.target.classList.add('bg-gold-500', 'text-night-900');
+            if (event && event.currentTarget) {
+                event.currentTarget.classList.remove('bg-night-700', 'text-gray-300');
+                event.currentTarget.classList.add('bg-gold-500', 'text-night-900', 'active');
+            }
 
-            renderProducts(cat);
+            const countryContainer = document.getElementById('countryFilterContainer');
+            const whiskyCountries = document.getElementById('whiskyCountryFilters');
+            const ronCountries = document.getElementById('ronCountryFilters');
+            const vodkaCountries = document.getElementById('vodkaCountryFilters');
+            const tequilaCountries = document.getElementById('tequilaCountryFilters');
+            const piscoCountries = document.getElementById('piscoCountryFilters');
+            const ginCountries = document.getElementById('ginCountryFilters');
+
+            if (countryContainer) {
+                if (cat === 'whisky') {
+                    countryContainer.classList.remove('hidden');
+                    if (whiskyCountries) whiskyCountries.classList.remove('hidden');
+                    if (ronCountries) ronCountries.classList.add('hidden');
+                    if (vodkaCountries) vodkaCountries.classList.add('hidden');
+                    if (tequilaCountries) tequilaCountries.classList.add('hidden');
+                    if (piscoCountries) piscoCountries.classList.add('hidden');
+                    if (ginCountries) ginCountries.classList.add('hidden');
+                } else if (cat === 'ron') {
+                    countryContainer.classList.remove('hidden');
+                    if (whiskyCountries) whiskyCountries.classList.add('hidden');
+                    if (ronCountries) ronCountries.classList.remove('hidden');
+                    if (vodkaCountries) vodkaCountries.classList.add('hidden');
+                    if (tequilaCountries) tequilaCountries.classList.add('hidden');
+                    if (piscoCountries) piscoCountries.classList.add('hidden');
+                    if (ginCountries) ginCountries.classList.add('hidden');
+                } else if (cat === 'vodka') {
+                    countryContainer.classList.remove('hidden');
+                    if (whiskyCountries) whiskyCountries.classList.add('hidden');
+                    if (ronCountries) ronCountries.classList.add('hidden');
+                    if (vodkaCountries) vodkaCountries.classList.remove('hidden');
+                    if (tequilaCountries) tequilaCountries.classList.add('hidden');
+                    if (piscoCountries) piscoCountries.classList.add('hidden');
+                    if (ginCountries) ginCountries.classList.add('hidden');
+                } else if (cat === 'tequila') {
+                    countryContainer.classList.remove('hidden');
+                    if (whiskyCountries) whiskyCountries.classList.add('hidden');
+                    if (ronCountries) ronCountries.classList.add('hidden');
+                    if (vodkaCountries) vodkaCountries.classList.add('hidden');
+                    if (tequilaCountries) tequilaCountries.classList.remove('hidden');
+                    if (piscoCountries) piscoCountries.classList.add('hidden');
+                    if (ginCountries) ginCountries.classList.add('hidden');
+                } else if (cat === 'pisco') {
+                    countryContainer.classList.remove('hidden');
+                    if (whiskyCountries) whiskyCountries.classList.add('hidden');
+                    if (ronCountries) ronCountries.classList.add('hidden');
+                    if (vodkaCountries) vodkaCountries.classList.add('hidden');
+                    if (tequilaCountries) tequilaCountries.classList.add('hidden');
+                    if (piscoCountries) piscoCountries.classList.remove('hidden');
+                    if (ginCountries) ginCountries.classList.add('hidden');
+                } else if (cat === 'gin') {
+                    countryContainer.classList.remove('hidden');
+                    if (whiskyCountries) whiskyCountries.classList.add('hidden');
+                    if (ronCountries) ronCountries.classList.add('hidden');
+                    if (vodkaCountries) vodkaCountries.classList.add('hidden');
+                    if (tequilaCountries) tequilaCountries.classList.add('hidden');
+                    if (piscoCountries) tequilaCountries.classList.add('hidden'); // safety check
+                    if (piscoCountries) piscoCountries.classList.add('hidden');
+                    if (ginCountries) ginCountries.classList.remove('hidden');
+                } else {
+                    countryContainer.classList.add('hidden');
+                }
+            }
+
+            renderProducts();
+        }
+                function filterCountry(country) {
+            currentCountry = country;
+            document.querySelectorAll('.country-btn').forEach(btn => {
+                btn.classList.remove('bg-gold-500/20', 'text-gold-400', 'border-gold-500/30', 'active');
+                btn.classList.add('bg-night-800', 'text-gray-400', 'border-white/10');
+            });
+            if (event && event.currentTarget) {
+                event.currentTarget.classList.remove('bg-night-800', 'text-gray-400', 'border-white/10');
+                event.currentTarget.classList.add('bg-gold-500/20', 'text-gold-400', 'border-gold-500/30', 'active');
+            }
+
+            renderProducts();
         }
 
-        // Cart Management
-        function addToCart(productId) {
+        function addToCart(productId, cardElement) {
+            const product = products.find(p => p.id === productId);
+            if (!product) return;
+
             const existing = cart.find(item => item.id === productId);
             if (existing) {
                 existing.quantity += 1;
             } else {
-                const prod = PRODUCTS.find(p => p.id === productId);
-                cart.push({ ...prod, quantity: 1 });
+                cart.push({ ...product, quantity: 1 });
             }
-            updateCartBadge();
-            toggleCartModal(true);
+
+            if (cardElement) {
+                cardElement.classList.add('ring-2', 'ring-gold-400', 'bg-gold-500/20');
+                setTimeout(() => {
+                    cardElement.classList.remove('ring-2', 'ring-gold-400', 'bg-gold-500/20');
+                }, 300);
+            }
+
+            const badge = document.getElementById('cartBadge');
+            if (badge) {
+                badge.classList.add('animate-bounce');
+                setTimeout(() => badge.classList.remove('animate-bounce'), 1000);
+            }
+
+            updateCartUI();
         }
 
-        function updateCartQuantity(productId, delta) {
+        function removeFromCart(productId) {
+            cart = cart.filter(item => item.id !== productId);
+            updateCartUI();
+        }
+
+        function changeQuantity(productId, delta) {
             const item = cart.find(i => i.id === productId);
             if (!item) return;
 
             item.quantity += delta;
             if (item.quantity <= 0) {
-                cart = cart.filter(i => i.id !== productId);
+                removeFromCart(productId);
+            } else {
+                updateCartUI();
             }
-            renderCartModal();
-            updateCartBadge();
         }
 
-        function updateCartBadge() {
+        function updateCartUI() {
+            const list = document.getElementById('cartItemsList');
             const badge = document.getElementById('cartBadge');
-            const totalItems = cart.reduce((acc, i) => acc + i.quantity, 0);
+            const subtotalEl = document.getElementById('cartSubtotal');
+            const deliveryEl = document.getElementById('cartDelivery');
+            const totalEl = document.getElementById('cartTotal');
+
+            const totalItems = cart.reduce((acc, item) => acc + item.quantity, 0);
             
             if (totalItems > 0) {
-                badge.innerText = totalItems;
-                badge.classList.remove('hidden');
+                if (badge) {
+                    badge.innerText = totalItems;
+                    badge.classList.remove('hidden');
+                }
             } else {
-                badge.classList.add('hidden');
+                if (badge) badge.classList.add('hidden');
             }
-        }
-
-        function toggleCartModal(forceOpen = false) {
-            const modal = document.getElementById('cartModal');
-            if (forceOpen || modal.classList.contains('hidden')) {
-                modal.classList.remove('hidden');
-                renderCartModal();
-            } else {
-                modal.classList.add('hidden');
-            }
-        }
-
-        function renderCartModal() {
-            const container = document.getElementById('cartItems');
-            container.innerHTML = '';
 
             if (cart.length === 0) {
-                container.innerHTML = `<p class="text-center text-gray-400 py-6 text-xs">Tu carrito está vacío. ¡Añade tus botellas de licor!</p>`;
+                if (list) list.innerHTML = `<p class="text-center text-sm text-gray-400 py-4">Tu carrito está vacío</p>`;
+                if (subtotalEl) subtotalEl.innerText = 'S/ 0.00';
+                if (deliveryEl) deliveryEl.innerText = 'S/ 5.00';
+                if (totalEl) totalEl.innerText = 'S/ 5.00';
+                return;
+            }
+
+            if (list) list.innerHTML = '';
+            let subtotal = 0;
+
+            cart.forEach(item => {
+                const itemTotal = item.price * item.quantity;
+                subtotal += itemTotal;
+
+                const row = document.createElement('div');
+                row.className = 'py-3 flex items-center justify-between text-sm';
+                row.innerHTML = `
+                    <div class="flex-1 pr-2">
+                        <p class="font-bold text-white text-xs sm:text-sm">${item.name}</p>
+                        <p class="text-xs text-gold-400 font-semibold">S/ ${item.price.toFixed(2)} c/u</p>
+                    </div>
+                    <div class="flex items-center gap-2">
+                        <button onclick="changeQuantity(${item.id}, -1)" class="w-6 h-6 rounded-lg bg-night-700 text-white font-bold hover:bg-night-600 flex items-center justify-center text-xs">-</button>
+                        <span class="font-bold text-white text-xs w-4 text-center">${item.quantity}</span>
+                        <button onclick="changeQuantity(${item.id}, 1)" class="w-6 h-6 rounded-lg bg-night-700 text-white font-bold hover:bg-night-600 flex items-center justify-center text-xs">+</button>
+                    </div>
+                    <div class="text-right pl-3">
+                        <span class="font-bold text-white text-xs sm:text-sm">S/ ${itemTotal.toFixed(2)}</span>
+                    </div>
+                `;
+                if (list) list.appendChild(row);
+            });
+
+            const delivery = subtotal >= 120 ? 0 : 5;
+            const total = subtotal + delivery;
+
+            if (subtotalEl) subtotalEl.innerText = `S/ ${subtotal.toFixed(2)}`;
+            if (deliveryEl) deliveryEl.innerText = delivery === 0 ? 'GRATIS' : `S/ ${delivery.toFixed(2)}`;
+            if (totalEl) totalEl.innerText = `S/ ${total.toFixed(2)}`;
+        }
+
+        function toggleFaq(id) {
+            const el = document.getElementById(id);
+            const icon = document.getElementById('icon-' + id);
+            if (el.classList.contains('hidden')) {
+                el.classList.remove('hidden');
+                icon.style.transform = 'rotate(180deg)';
             } else {
-                cart.forEach(item => {
-                    const row = document.createElement('div');
-                    row.className = 'flex items-center justify-between p-3 rounded-xl bg-night-900 border border-white/5 text-xs';
-                    row.innerHTML = `
-                        <div class="flex items-center gap-3">
-                            <span class="text-xl">${item.icon}</span>
-                            <div>
-                                <p class="font-bold text-white">${item.name}</p>
-                                <p class="text-gold-400 font-bold">S/ ${item.price.toFixed(2)}</p>
-                            </div>
-                        </div>
-
-                        <div class="flex items-center gap-2 bg-night-800 rounded-lg p-1 border border-white/10">
-                            <button onclick="updateCartQuantity('${item.id}', -1)" class="w-6 h-6 rounded bg-night-700 text-white font-bold flex items-center justify-center hover:bg-gold-500 hover:text-night-900">-</button>
-                            <span class="font-bold text-white px-1">${item.quantity}</span>
-                            <button onclick="updateCartQuantity('${item.id}', 1)" class="w-6 h-6 rounded bg-night-700 text-white font-bold flex items-center justify-center hover:bg-gold-500 hover:text-night-900">+</button>
-                        </div>
-                    `;
-                    container.appendChild(row);
-                });
+                el.classList.add('hidden');
+                icon.style.transform = 'rotate(0deg)';
             }
-
-            calculateCartTotal();
-            lucide.createIcons();
         }
 
-        function calculateCartTotal() {
-            const subtotal = cart.reduce((acc, item) => acc + (item.price * item.quantity), 0);
+        function toggleCartModal() {
+            const modal = document.getElementById('cartModal');
+            if (modal) modal.classList.toggle('hidden');
+        }
+
+        function sendWhatsAppOrder() {
+            const name = document.getElementById('orderName').value;
+            const address = document.getElementById('orderAddress').value;
+            const payment = document.getElementById('orderPayment').value;
             
-            const zoneSelect = document.getElementById('cartZone');
-            const selectedOpt = zoneSelect.options[zoneSelect.selectedIndex];
-            let deliveryFee = parseFloat(selectedOpt.getAttribute('data-fee') || 5);
-
-            // Free delivery over 120 PEN
-            if (subtotal >= 120) {
-                deliveryFee = 0;
+            if (!name || !address) {
+                alert('Por favor ingresa tu nombre y dirección de entrega.');
+                return;
             }
 
-            const total = subtotal + deliveryFee;
+            let cartText = '';
+            if (cart.length > 0) {
+                cartText = '\n*Detalle del Pedido:*\n' + cart.map(item => `- ${item.name} x${item.quantity} (S/ ${(item.price * item.quantity).toFixed(2)})`).join('\n');
+            }
 
-            document.getElementById('cartSubtotal').innerText = `S/ ${subtotal.toFixed(2)}`;
-            document.getElementById('cartDeliveryFee').innerText = deliveryFee === 0 ? '¡GRATIS!' : `S/ ${deliveryFee.toFixed(2)}`;
-            document.getElementById('cartTotal').innerText = `S/ ${total.toFixed(2)}`;
+            const subtotal = cart.reduce((acc, item) => acc + (item.price * item.quantity), 0);
+            const delivery = subtotal >= 120 ? 0 : 5;
+            const total = subtotal + delivery;
+
+            const msg = `¡Hola Licorería Pochita Cusco! 🍾\n\nDesearía hacer el siguiente pedido:\n- *Cliente:* ${name}\n- *Dirección:* ${address}\n- *Pago:* ${payment}\n${cartText}\n\n*Total Estimado:* S/ ${total.toFixed(2)}\n\nQuedo a la espera de la confirmación para el envío exprés.`;
+            const phone = "51900000000";
+            window.open(`https://wa.me/${phone}?text=${encodeURIComponent(msg)}`, '_blank');
         }
-
-        // Zone Info Change Handler for Landing Section
-        function updateZoneInfo() {
+function updateZoneInfo() {
             const zone = document.getElementById('zoneSelect').value;
             const timeEl = document.getElementById('zoneTime');
             const feeEl = document.getElementById('zoneFee');
@@ -947,12 +1082,12 @@
             const descEl = document.getElementById('zoneDesc');
 
             const data = {
-                centro: { time: '15 - 25 min', fee: 'S/ 5.00', title: 'Centro Histórico & San Blas', desc: 'Súper rápido para hoteles, Airbnb, departamentos y locales.' },
-                wanchaq: { time: '20 - 30 min', fee: 'S/ 5.00', title: 'Wanchaq & Magisterio', desc: 'Atención exprés para viviendas residenciales y urbanizaciones.' },
-                san_sebastian: { time: '25 - 35 min', fee: 'S/ 7.00', title: 'San Sebastián & Santa Rosa', desc: 'Entrega directa de licores originales en mochilas térmicas.' },
-                san_jeronimo: { time: '30 - 40 min', fee: 'S/ 8.00', title: 'San Jerónimo & Larapa', desc: 'Ideal para reuniones de fin de semana y eventos.' },
-                santiago: { time: '25 - 35 min', fee: 'S/ 6.00', title: 'Santiago & Ttio', desc: 'Entrega rápida a domicilio en zonas urbanas de Santiago.' },
-                sacsayhuaman: { time: '30 - 40 min', fee: 'S/ 8.00', title: 'Zona Alta & Sacsayhuamán', desc: 'Atención especial en hospedajes altos de San Blas y alrededores.' }
+                centro: { time: '15 - 25 min', fee: 'S/ 5.00', title: 'Centro Histórico & San Blas', desc: 'Súper rápido saliendo desde Siete Angelitos para hoteles y casas cercanas.' },
+                wanchaq: { time: '20 - 30 min', fee: 'S/ 6.00', title: 'Wanchaq & Magisterio', desc: 'Envío directo por la Av. de la Cultura hacia urbanizaciones residenciales.' },
+                santiago: { time: '25 - 35 min', fee: 'S/ 7.00', title: 'Santiago & Ttio', desc: 'Llegamos con motorizados seguros cruzando hacia la zona noroccidental.' },
+                san_sebastian: { time: '30 - 40 min', fee: 'S/ 9.00', title: 'San Sebastián & Santa Rosa', desc: 'Trayecto medio-largo por vía expresa con mochilas térmicas.' },
+                san_jeronimo: { time: '35 - 50 min', fee: 'S/ 12.00', title: 'San Jerónimo & Larapa', desc: 'Envío prolongado para eventos y reuniones de fin de semana.' },
+                zona_alta: { time: '15 - 25 min', fee: 'S/ 6.00', title: 'Zona Alta & Sapantiana', desc: 'Acceso ágil por las partes altas colindantes a San Blas.' }
             };
 
             if (data[zone]) {
@@ -962,75 +1097,9 @@
                 descEl.innerText = data[zone].desc;
             }
         }
-
-  // Enviar pedido directamente a Google Sheets vía Make
-async function sendOrderWhatsApp() {
-    if (cart.length === 0) {
-        alert('Añade al menos una botella a tu pedido.');
-        return;
-    }
-
-    const name = document.getElementById('custName').value.trim();
-    const phone = document.getElementById('custPhone').value.trim();
-    const address = document.getElementById('custAddress').value.trim();
-    const email = document.getElementById('custEmail') ? document.getElementById('custEmail').value.trim() : '';
-
-    if (!name || !phone) {
-        alert('Por favor llena tu Nombre y Teléfono.');
-        return;
-    }
-
-    const payment = document.getElementById('custPayment').value;
-    const zoneText = document.getElementById('cartZone').options[document.getElementById('cartZone').selectedIndex].text;
-    const totalText = document.getElementById('cartTotal').innerText;
-
-    let itemsList = cart.map(item => `${item.quantity}x ${item.name}`).join(', ');
-
-    const payload = {
-        cliente: name,
-        telefono: phone,
-        email: email,
-        direccion: `${address} (${zoneText})`,
-        productos: itemsList,
-        total: totalText,
-        fecha: new Date().toLocaleString("es-PE", { timeZone: "America/Lima" })
-    };
-
-    try {
-        await fetch("https://hook.us2.make.com/kmjz83gp35pbka3bungaltroc5krdn1z", {
-            method: 'POST',
-            headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify(payload)
-        });
-
-        alert('¡Pedido registrado con éxito!');
-        toggleCartModal();
-        cart = [];
-        updateCartBadge();
-    } catch (e) {
-        console.log("Error al enviar a Make:", e);
-        alert('Ocurrió un error al procesar el pedido.');
-    }
-}
-        // Accordion FAQ Toggle
-        function toggleFaq(id) {
-            const el = document.getElementById(id);
-            const icon = document.getElementById(`icon-${id}`);
-            if (el.classList.contains('hidden')) {
-                el.classList.remove('hidden');
-                icon.classList.add('rotate-180');
-            } else {
-                el.classList.add('hidden');
-                icon.classList.remove('rotate-180');
-            }
-        }
-
-        // Initialize on window load
-        window.onload = function() {
-            lucide.createIcons();
+        document.addEventListener('DOMContentLoaded', () => {
             renderProducts();
-            updateCartBadge();
-        };
+        });
     </script>
 </body>
 </html>
