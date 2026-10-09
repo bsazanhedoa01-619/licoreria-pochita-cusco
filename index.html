@@ -508,7 +508,7 @@
         </div>
     </section>
 
-    <!-- SHOPPING CART MODAL -->
+   <!-- SHOPPING CART MODAL -->
     <div id="cartModal" class="fixed inset-0 z-50 bg-black/80 backdrop-blur-md hidden flex items-center justify-center p-4">
         <div class="bg-night-800 border border-gold-500/30 rounded-3xl w-full max-w-xl max-h-[90vh] overflow-y-auto p-6 sm:p-8 relative shadow-2xl">
             <button onclick="toggleCartModal()" class="absolute top-5 right-5 text-gray-400 hover:text-white p-2">
@@ -518,7 +518,7 @@
             <h3 class="font-heading font-black text-2xl text-white mb-2 flex items-center gap-2">
                 <i data-lucide="shopping-cart" class="w-6 h-6 text-gold-400"></i> Tu Pedido de Licores
             </h3>
-            <p class="text-xs text-gray-400 mb-6">Revisa tus botellas y completa tus datos para enviar por WhatsApp.</p>
+            <p class="text-xs text-gray-400 mb-6">Revisa tus botellas y completa tus datos para enviar por WhatsApp y recibir confirmación por correo.</p>
 
             <div id="cartItemsList" class="space-y-3 mb-6 divide-y divide-white/10">
                 <p class="text-center text-sm text-gray-400 py-4">Tu carrito está vacío</p>
@@ -545,6 +545,10 @@
                     <input type="text" id="orderName" placeholder="Ej: Carlos Mendoza" class="w-full bg-night-900 border border-white/20 text-white rounded-xl px-4 py-2.5 text-sm focus:outline-none focus:border-gold-500">
                 </div>
                 <div>
+                    <label class="block text-xs font-semibold text-gray-300 uppercase mb-1">Tu Correo Electrónico:</label>
+                    <input type="email" id="orderEmail" placeholder="ejemplo@gmail.com" class="w-full bg-night-900 border border-white/20 text-white rounded-xl px-4 py-2.5 text-sm focus:outline-none focus:border-gold-500">
+                </div>
+                <div>
                     <label class="block text-xs font-semibold text-gray-300 uppercase mb-1">Dirección de entrega o Referencia:</label>
                     <input type="text" id="orderAddress" placeholder="Ej: Calle Plateros 123 / Hotel El Puma" class="w-full bg-night-900 border border-white/20 text-white rounded-xl px-4 py-2.5 text-sm focus:outline-none focus:border-gold-500">
                 </div>
@@ -557,6 +561,17 @@
                         <option value="Transferencia">Transferencia BCP/Interbank</option>
                     </select>
                 </div>
+
+                <!-- AVISO DE PRIVACIDAD Y CONSENTIMIENTO (Requisito del Paso 3.5) -->
+                <div class="pt-2">
+                    <label class="flex items-start gap-2.5 cursor-pointer">
+                        <input type="checkbox" id="privacyConsent" class="mt-1 rounded bg-night-900 border-white/20 text-gold-500 focus:ring-gold-500">
+                        <span class="text-[11px] text-gray-400 leading-snug">
+                            Acepto el <a href="#" class="text-gold-400 underline">aviso de privacidad</a> y autorizo el procesamiento de mis datos para la gestión y envío de mi pedido de licores en Cusco.
+                        </span>
+                    </label>
+                </div>
+
                 <button onclick="sendWhatsAppOrder()" class="w-full gold-btn py-4 rounded-xl text-night-900 font-extrabold text-base flex items-center justify-center gap-2 shadow-xl mt-4">
                     <i data-lucide="message-square" class="w-5 h-5 fill-night-900"></i>
                     <span>Confirmar Pedido por WhatsApp</span>
@@ -1100,6 +1115,75 @@ function updateZoneInfo() {
         document.addEventListener('DOMContentLoaded', () => {
             renderProducts();
         });
+
+        async function sendWhatsAppOrder() {
+    const name = document.getElementById('orderName').value;
+    const email = document.getElementById('orderEmail').value;
+    const address = document.getElementById('orderAddress').value;
+    const payment = document.getElementById('orderPayment').value;
+    const consent = document.getElementById('privacyConsent').checked;
+
+    // Validación de campos
+    if (!name || !email || !address) {
+        alert('Por favor completa tu nombre, correo electrónico y dirección.');
+        return;
+    }
+
+    if (!consent) {
+        alert('Por favor acepta la casilla de aviso de privacidad para continuar.');
+        return;
+    }
+
+    if (cart.length === 0) {
+        alert('Tu carrito está vacío. Agrega productos antes de confirmar.');
+        return;
+    }
+
+    const subtotal = cart.reduce((acc, item) => acc + (item.price * item.quantity), 0);
+    const delivery = subtotal >= 120 ? 0 : 5;
+    const total = subtotal + delivery;
+
+    // Formateamos los productos como un texto legible para Sheets y Gmail
+    const listaProductos = cart.map(item => `${item.name} x${item.quantity} (S/ ${(item.price * item.quantity).toFixed(2)})`).join(', ');
+
+    // 1. ENVÍO DE DATOS A MAKE.COM (Webhook)
+    const WEBHOOK_URL = "https://hook.us2.make.com/kmjz83gp35pbka3bungaltroc5krdn1z"; 
+
+    try {
+        await fetch(WEBHOOK_URL, {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({
+                fecha: new Date().toLocaleString(),
+                cliente_nombre: name,
+                cliente_email: email,
+                direccion: address,
+                metodo_pago: payment,
+                subtotal: subtotal.toFixed(2),
+                delivery: delivery.toFixed(2),
+                total: total.toFixed(2),
+                productos: listaProductos
+            })
+        });
+    } catch (error) {
+        console.error("Error enviando al Webhook:", error);
+    }
+
+    // 2. REDIRECCIÓN A WHATSAPP
+    let cartText = '\n*Detalle del Pedido:*\n' + cart.map(item => `- ${item.name} x${item.quantity} (S/ ${(item.price * item.quantity).toFixed(2)})`).join('\n');
+    const msg = `¡Hola Licorería Pochita Cusco! 🍾\n\nDesearía hacer el siguiente pedido:\n- *Cliente:* ${name}\n- *Correo:* ${email}\n- *Dirección:* ${address}\n- *Pago:* ${payment}\n${cartText}\n\n*Total Estimado:* S/ ${total.toFixed(2)}\n\nQuedo a la espera de la confirmación para el envío exprés.`;
+    
+    const phone = "51900000000"; // Pon tu número de WhatsApp aquí
+    window.open(`https://wa.me/${phone}?text=${encodeURIComponent(msg)}`, '_blank');
+}
+
+            // 2. ENVÍO A WHATSAPP
+            let cartText = '\n*Detalle del Pedido:*\n' + cart.map(item => `- ${item.name} x${item.quantity} (S/ ${(item.price * item.quantity).toFixed(2)})`).join('\n');
+            const msg = `¡Hola Licorería Pochita Cusco! 🍾\n\nDesearía hacer el siguiente pedido:\n- *Cliente:* ${name}\n- *Correo:* ${email}\n- *Dirección:* ${address}\n- *Pago:* ${payment}\n${cartText}\n\n*Total Estimado:* S/ ${total.toFixed(2)}\n\nQuedo a la espera de la confirmación para el envío exprés.`;
+            
+            const phone = "51900000000"; // Reemplaza por tu número de WhatsApp
+            window.open(`https://wa.me/${phone}?text=${encodeURIComponent(msg)}`, '_blank');
+        }
     </script>
 </body>
 </html>
