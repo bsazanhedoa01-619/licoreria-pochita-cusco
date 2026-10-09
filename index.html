@@ -1159,6 +1159,7 @@ function updateZoneInfo() {
             body: JSON.stringify({
                 fecha: new Date().toLocaleString(),
                 cliente_nombre: name,
+                telefono: document.getElementById('orderPhone') ? document.getElementById('orderPhone').value : '',
                 cliente_email: email,
                 direccion: address,
                 metodo_pago: payment,
@@ -1167,7 +1168,7 @@ function updateZoneInfo() {
                 total: total.toFixed(2),
                 productos: listaProductos
             })
-        });
+        })
     } catch (error) {
         console.error("Error enviando al Webhook:", error);
     }
