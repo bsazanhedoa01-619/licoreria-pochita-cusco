@@ -1069,29 +1069,6 @@ function filterCategory(cat) {
             if (modal) modal.classList.toggle('hidden');
         }
 
-        function sendWhatsAppOrder() {
-            const name = document.getElementById('orderName').value;
-            const address = document.getElementById('orderAddress').value;
-            const payment = document.getElementById('orderPayment').value;
-            
-            if (!name || !address) {
-                alert('Por favor ingresa tu nombre y dirección de entrega.');
-                return;
-            }
-
-            let cartText = '';
-            if (cart.length > 0) {
-                cartText = '\n*Detalle del Pedido:*\n' + cart.map(item => `- ${item.name} x${item.quantity} (S/ ${(item.price * item.quantity).toFixed(2)})`).join('\n');
-            }
-
-            const subtotal = cart.reduce((acc, item) => acc + (item.price * item.quantity), 0);
-            const delivery = subtotal >= 120 ? 0 : 5;
-            const total = subtotal + delivery;
-
-            const msg = `¡Hola Licorería Pochita Cusco! 🍾\n\nDesearía hacer el siguiente pedido:\n- *Cliente:* ${name}\n- *Dirección:* ${address}\n- *Pago:* ${payment}\n${cartText}\n\n*Total Estimado:* S/ ${total.toFixed(2)}\n\nQuedo a la espera de la confirmación para el envío exprés.`;
-            const phone = "51900000000";
-            window.open(`https://wa.me/${phone}?text=${encodeURIComponent(msg)}`, '_blank');
-        }
 function updateZoneInfo() {
             const zone = document.getElementById('zoneSelect').value;
             const timeEl = document.getElementById('zoneTime');
@@ -1185,17 +1162,6 @@ function updateZoneInfo() {
     }
 }
 
-   // 2. REDIRECCIÓN A WHATSAPP
-    let cartText = '\n*Detalle del Pedido:*\n' + cart.map(item => `- ${item.name} x${item.quantity} (S/ ${(item.price * item.quantity).toFixed(2)})`).join('\n');
-    const msg = `¡Hola Licorería Pochita Cusco! 🍾\n\nDesearía hacer el siguiente pedido:\n- *Cliente:* ${name}\n- *Correo:* ${email}\n- *Dirección:* ${address}\n- *Pago:* ${payment}\n${cartText}\n\n*Total Estimado:* S/ ${total.toFixed(2)}\n\nQuedo a la espera de la confirmación para el envío exprés.`;
-    
-    const phone = "51900000000"; // Tu número de WhatsApp
-    window.open(`https://wa.me/${phone}?text=${encodeURIComponent(msg)}`, '_blank');
-
-    // 3. CERRAR MODAL Y VACIAR CARRITO
-    cart = [];
-    updateCartUI();
-    toggleCartModal();
     </script>
 </body>
 </html>
