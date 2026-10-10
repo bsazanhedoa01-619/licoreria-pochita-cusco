@@ -577,9 +577,9 @@
                 </div>
 
                 <button onclick="sendWhatsAppOrder()" class="w-full gold-btn py-4 rounded-xl text-night-900 font-extrabold text-base flex items-center justify-center gap-2 shadow-xl mt-4">
-                    <i data-lucide="message-square" class="w-5 h-5 fill-night-900"></i>
-                    <span>Confirmar Pedido por WhatsApp</span>
-                </button>
+    <i data-lucide="check-circle" class="w-5 h-5 fill-night-900"></i>
+    <span>Confirmar y Enviar Pedido</span>
+</button>
             </div>
         </div>
     </div>
@@ -1119,14 +1119,15 @@ function updateZoneInfo() {
             renderProducts();
         });
 
-        async function sendWhatsAppOrder() {
+       async function sendWhatsAppOrder() {
     const name = document.getElementById('orderName').value;
     const email = document.getElementById('orderEmail').value;
+    const phone = document.getElementById('orderPhone') ? document.getElementById('orderPhone').value : '';
     const address = document.getElementById('orderAddress').value;
     const payment = document.getElementById('orderPayment').value;
     const consent = document.getElementById('privacyConsent').checked;
 
-    // Validación de campos
+    // Validación de campos obligatorios
     if (!name || !email || !address) {
         alert('Por favor completa tu nombre, correo electrónico y dirección.');
         return;
@@ -1146,20 +1147,20 @@ function updateZoneInfo() {
     const delivery = subtotal >= 120 ? 0 : 5;
     const total = subtotal + delivery;
 
-    // Formateamos los productos como un texto legible para Sheets y Gmail
+    // Formateamos los productos para enviarlos a Make / Sheets / Correo
     const listaProductos = cart.map(item => `${item.name} x${item.quantity} (S/ ${(item.price * item.quantity).toFixed(2)})`).join(', ');
 
-    // 1. ENVÍO DE DATOS A MAKE.COM (Webhook)
     const WEBHOOK_URL = "https://hook.us2.make.com/kmjz83gp35pbka3bungaltroc5krdn1z"; 
 
     try {
+        // Mostramos un estado de carga opcional o desactivamos el botón si deseas
         await fetch(WEBHOOK_URL, {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({
                 fecha: new Date().toLocaleString(),
                 cliente_nombre: name,
-                telefono: document.getElementById('orderPhone') ? document.getElementById('orderPhone').value : '',
+                telefono: phone,
                 cliente_email: email,
                 direccion: address,
                 metodo_pago: payment,
@@ -1168,10 +1169,21 @@ function updateZoneInfo() {
                 total: total.toFixed(2),
                 productos: listaProductos
             })
-        })
+        });
+
+        // Mensaje de éxito solicitado
+        alert("¡Tu pedido fue realizado con éxito!");
+
+        // Limpiamos el carrito y cerramos el modal
+        cart = [];
+        updateCartUI();
+        toggleCartModal();
+
     } catch (error) {
-        console.error("Error enviando al Webhook:", error);
+        console.error("Error enviando el pedido:", error);
+        alert("Hubo un error al procesar tu pedido. Por favor, intenta de nuevo.");
     }
+}
 
    // 2. REDIRECCIÓN A WHATSAPP
     let cartText = '\n*Detalle del Pedido:*\n' + cart.map(item => `- ${item.name} x${item.quantity} (S/ ${(item.price * item.quantity).toFixed(2)})`).join('\n');
@@ -1184,7 +1196,6 @@ function updateZoneInfo() {
     cart = [];
     updateCartUI();
     toggleCartModal();
-}
     </script>
 </body>
 </html>
